@@ -1,0 +1,29 @@
+extends ../base.pug
+
+include ../partials/mixins
+
+block container 
+    main.container(data-smoothscroll="container" data-template="home")
+        section.content(data-smoothscroll="content")
+            .hero 
+                .hero_wrapper 
+                    .hero_container 
+                        .hero_media 
+                            figure.hero_figure 
+                                img.hero_image.lazyload(data-src=require("../../images/hero.jpg").default, alt="hero")
+                        
+                        .hero_content(class="grid") 
+                            .hero_title
+                                h1|CVL Luminaires
+                        
+                            .hero_description 
+                                p|An assembly of designs, the Calé(e) collection offers a range of geometric patterns where the sense of imbalance forms simple, linear and sophisticated objects.
+                            
+                        .hero_link(class="grid")
+                            h4|→ Go to the gallery
+
+           
+                        
+        
+
+

@@ -1,0 +1,302 @@
+.gallery {
+    margin-top: 24rem;
+}
+
+.gallery_wrapper {
+    
+}
+
+.gallery_container {
+}
+
+.gallery_heading {
+    @extend %flex-justify;
+    margin-bottom: 12rem;
+}
+.gallery_heading_title {
+    grid-area: c1;
+    @media (max-width: $breakpoint-tablet) {
+        margin-bottom: 6rem;
+
+    }
+}
+.gallery_heading_description {
+    grid-area: c3;
+    width: 200%;
+    @media (max-width: $breakpoint-tablet) {
+        width: 100%;
+    }
+}
+
+.gallery_products {
+    align-items: end;
+    -webkit-align-items: end;
+
+    @media (max-width: $breakpoint-tablet) {
+        align-items: start;
+        -webkit-align-items: start;
+    }
+}
+
+.gallery_product { 
+    position: relative;
+    margin-bottom: 3rem;
+ 
+    // overflow: hidden;
+
+    @media (max-width: $breakpoint-tablet) {
+       margin-bottom: 3rem;
+    }
+
+    .product_media {
+        position: relative;
+        margin-bottom: 3rem;
+        overflow: hidden;
+    }
+}
+
+.gallery_products:nth-child(2) {
+    margin-bottom: 12rem;
+    .gallery_product:nth-child(1) {
+        .product_media {
+            grid-area: c1;
+
+            .product_media_figure {
+                position: relative;
+                width: 44.3rem;
+                height: 60rem;
+            }
+        
+            .product_media_image {
+               @extend %product_image;
+            }
+        }
+    }
+    
+    .gallery_product:nth-child(2) {
+        .product_media {
+            grid-area: c2;
+        
+            .product_media_figure {
+                position: relative;
+                width: 91.6rem;
+                height: 69rem;
+            }
+        
+            .product_media_image {
+               @extend %product_image;
+            }
+        }
+    }
+    
+    .gallery_product:nth-child(3) {
+        .product_media {
+            grid-area: c3;
+        
+            .product_media_figure {
+                position: relative;
+                width: 44.3rem;
+                height: 45rem;
+            }
+        
+            .product_media_image {
+               @extend %product_image;
+            }
+        }
+    }
+    
+}
+
+.gallery_products:nth-child(3) {
+    margin-bottom: 12rem;
+
+    .gallery_product { 
+        &:nth-child(1) {
+            .product_media {
+                grid-area: c1;
+            
+                .product_media_figure {
+                    position: relative;
+                    width: 44.3rem;
+                    height: 51rem;
+                }
+            
+                .product_media_image {
+                   @extend %product_image;
+                }
+            }
+        }
+    
+        &:nth-child(2) {
+            .product_media {
+                grid-area: c2;
+            
+                .product_media_figure {
+                    position: relative;
+                    width: 44.3rem;
+                    height: 60rem;
+                }
+            
+                .product_media_image {
+                   @extend %product_image;
+                }
+            }
+        }
+    
+        &:nth-child(3) {
+            .product_media {
+                grid-area: c3;
+            
+                .product_media_figure {
+                    position: relative;
+                    width: 91.36rem;
+                    height: 93rem;
+                }
+            
+                .product_media_image {
+                   @extend %product_image;
+                }
+            }
+        }
+
+    }
+}
+
+.gallery_products:nth-child(5) {
+    margin-bottom: 12rem;
+
+    .gallery_product { 
+        &:nth-child(1) {
+            .product_media {
+                grid-area: c1;
+            
+                .product_media_figure {
+                    position: relative;
+                    width: 91.6rem;
+                    height: 120rem;
+                }
+            
+                .product_media_image {
+                   @extend %product_image;
+                }
+            }
+        }
+    
+        &:nth-child(2) {
+            .product_media {
+                grid-area: c2;
+            
+                .product_media_figure {
+                    position: relative;
+                    width: 44.3rem;
+                    height: 65.9rem;
+                }
+            
+                .product_media_image {
+                   @extend %product_image;
+                }
+            }
+        }
+    
+        &:nth-child(3) {
+            .product_media {
+                grid-area: c3;
+            
+                .product_media_figure {
+                    position: relative;
+                    width: 44.3rem;
+                    height: 48.1rem;
+                }
+            
+                .product_media_image {
+                   @extend %product_image;
+                }
+            }
+        }
+    }
+}
+
+
+
+    
+.product_info {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+
+    opacity: 0;
+
+    .product_info_wrapper {
+        background-color: $color-alternate;
+        padding: 3rem;
+    
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: inherit;
+    }
+
+    .product_info_materials {
+        margin-bottom: 3rem;
+
+        .product_info_materials_title {
+            margin-bottom: 1rem;
+        }
+    }
+
+    .product_info_textiles {
+        margin-bottom: 3rem;
+
+        .product_info_textiles_title {
+            margin-bottom: 1rem;
+        }
+    }
+
+    .product_info_details {
+        display: block;
+    }
+    
+    .product_info_details_item {
+        display: flex;
+        align-items: center;
+
+        .details_color {
+            width: 1.2rem;
+            height: 1.2rem;
+            margin-right: 1rem;
+            background-color: #171717;
+        }
+
+        &:nth-child(2) {
+            .details_color {
+                width: 1.2rem;
+                height: 1.2rem;
+                background-color: #CBA852;
+            }
+        }
+    }
+
+    //? Variant for lamps
+    .product_info_details_item-lamp {
+        display: flex;
+        align-items: center;
+
+        .details_color {
+            width: 1.2rem;
+            height: 1.2rem;
+            margin-right: 1rem;
+            background-color: #171717;
+        }
+
+        &:nth-child(2) {
+            .details_color {
+                width: 1.2rem;
+                height: 1.2rem;
+                background-color: #DFDFDD;
+            }
+        }
+    }
+
+}

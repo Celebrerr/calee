@@ -1,0 +1,72 @@
+$font-questrial: 'Questrial';
+$font-mori: 'Mori';
+
+%title-big {
+    font-family: $font-questrial;
+    font-size: 10em;
+    // line-height: 5.5rem;
+    // @media (max-width: $breakpoint-mobile) {
+    //     font-size: 11rem;
+    //     line-height: 6.5rem;
+
+    // }
+}
+
+%title-h1 {
+    font-family: $font-questrial;
+    font-size: 7.4rem;
+    // line-height: 5.5rem;
+    // @media (max-width: $breakpoint-mobile) {
+    //     font-size: 8.4rem;
+    //     line-height: 6.5rem;
+
+    // }
+}
+
+%title-h2 {
+    font-family: $font-questrial;
+    font-size: 5.9rem;
+    line-height: 7rem;
+    // @media (max-width: $breakpoint-mobile) {
+    //     font-size: 6.9rem;
+    // }
+}
+
+%title-h3 {
+    font-family: $font-mori;
+    font-size: 4.5rem;
+    // line-height: 5rem;
+
+    // @media (max-width: $breakpoint-mobile) {
+    //     font-size: 5.1rem;
+        
+    // }
+}
+
+%title-h4 {
+    font-family: $font-mori;
+    font-size: 3.8rem;
+    line-height: 4.5rem;
+
+    // @media (max-width: $breakpoint-mobile) {
+    //     font-size: 4.5rem;
+        
+    // }
+}
+
+%parag {
+    font-family: $font-mori;
+    font-size: 2.0rem;
+    line-height: 2.4rem;
+
+    // @media (max-width: $breakpoint-mobile) {
+    //     font-size: 3.0rem;
+    //     line-height: 3.4rem;
+    // }
+}
+
+%label {
+    font-family: $font-mori;
+    font-size: 1.6rem;
+    line-height: 2rem;
+}

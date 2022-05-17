@@ -1,0 +1,66 @@
+mixin arrow-title 
+    svg(viewBox="0 0 27 24" fill="none" xmlns="http://www.w3.org/2000/svg")
+        path(d="M15 23.3L4 12.3V12.2L6.3 9.9C6.4 9.8 6.4 9.8 6.5 9.9L13.6 17C13.7 17.1 13.8 17 13.8 16.9V5.4C13.8 4.3 12.9 3.4 11.8 3.4H0.3C0.2 3.4 0 3.3 0 3.1V0.2C0 0.0999998 0.1 0 0.3 0H12.8C15.3 0 17.3 2 17.3 4.5V16.6C17.3 16.7 17.4 16.8 17.5 16.7L24.2 10C24.3 9.9 24.4 9.9 24.5 10L26.6 12.1C26.7 12.2 26.7 12.3 26.6 12.4L15.7 23.3C15.5 23.4 15.2 23.4 15 23.3Z" fill="#D4D7F7")
+
+mixin arrow-link
+    svg(viewBox="0 0 27 24" fill="none" xmlns="http://www.w3.org/2000/svg")
+        path(d="M19.0651 16.6536L19.0651 1.30288C18.9953 1.09355 18.786 0.884222 18.5767 0.814446L3.36549 0.814448C3.22594 0.814448 3.15616 0.884226 3.15616 1.02378L3.15616 3.95438C3.15616 4.09393 3.22593 4.16371 3.36548 4.16371L12.7155 4.1637C12.855 4.1637 12.855 4.30325 12.7853 4.37303L0.591107 16.5672C0.569307 16.589 0.568742 16.643 0.606916 16.6811C1.11952 17.1935 2.43376 18.5079 2.805 18.8792L2.90245 18.9767C2.96024 19.0344 3.01964 19.023 3.06597 18.9767L15.4368 6.60586C15.5065 6.53609 15.6461 6.53609 15.6461 6.67564L15.6461 16.5839C15.6461 16.7234 15.6461 16.7234 15.7856 16.7234L18.9953 16.7234L19.0651 16.6536Z" fill="#D4D7F7")
+
+mixin arrow-next 
+    svg.case_next_svg(viewBox="0 0 50 29" fill="none" xmlns="http://www.w3.org/2000/svg")
+        path(d="M49.0998 16.21L38.0998 5.20996H37.9998L35.6998 7.50996C35.5998 7.60996 35.5998 7.60996 35.6998 7.70996L42.7998 14.81C42.8998 14.91 42.7998 15.01 42.6998 15.01H6.1998C5.0998 15.01 4.1998 14.11 4.1998 13.01V1.50996C4.1998 1.40996 4.0998 1.20996 3.8998 1.20996H0.999805C0.899805 1.20996 0.799805 1.30996 0.799805 1.50996V14.01C0.799805 16.51 2.7998 18.51 5.2998 18.51H42.3998C42.4998 18.51 42.5998 18.61 42.4998 18.71L35.7998 25.41C35.6998 25.51 35.6998 25.61 35.7998 25.71L37.8998 27.81C37.9998 27.91 38.0998 27.91 38.1998 27.81L49.0998 16.91C49.1998 16.71 49.1998 16.41 49.0998 16.21Z" fill="#D4D7F7")
+
+mixin arrow-scroll 
+    svg(viewBox="0 0 28 49" fill="none" xmlns="http://www.w3.org/2000/svg")
+        path(d="M15.375 48.3L4.375 37.3V37.2L6.675 34.9C6.775 34.8 6.775 34.8 6.875 34.9L13.975 42C14.075 42.1 14.175 42 14.175 41.9V5.4C14.175 4.3 13.275 3.4 12.175 3.4H0.675C0.575 3.4 0.375 3.3 0.375 3.1V0.2C0.375 0.1 0.475 0 0.675 0H13.175C15.675 0 17.675 2 17.675 4.5V41.6C17.675 41.7 17.775 41.8 17.875 41.7L24.575 35C24.675 34.9 24.775 34.9 24.875 35L26.975 37.1C27.075 37.2 27.075 37.3 26.975 37.4L16.075 48.3C15.875 48.4 15.575 48.4 15.375 48.3Z" fill="#D4D7F7")
+
+
+mixin product-info
+    .product_info 
+        .product_info_wrapper
+            .product_info_upper
+                .product_info_materials
+                    p.product_info_materials_title|Materials: 
+
+                    p|Black textile
+                    p|Solid brass
+                    p|Polycarbonate diffuser
+
+                .product_info_textiles
+                    p.product_info_textiles_title|Cables: 
+
+                    p|Black textile
+                    p|Gold textile
+
+            .product_info_details
+                .product_info_details_item
+                    .details_color
+                    p|Satin Graphite
+                .product_info_details_item
+                    .details_color
+                    p|Satin Brass
+
+mixin product-info-lamp
+    .product_info
+        .product_info_wrapper
+            .product_info_1
+                .product_info_materials
+                    p.product_info_materials_title|Materials: 
+
+                    p|Black textile
+                    p|Solid brass
+
+                .product_info_textiles
+                    p.product_info_textiles_title|Lampshades: 
+
+                    p|Black chinette
+                    p|Gold chinette
+
+            .product_info_details
+                .product_info_details_item
+                    .details_color
+                    p|Satin Graphite
+                .product_info_details_item-lamp
+                    .details_color
+                    p|Satin Nickel
+                                

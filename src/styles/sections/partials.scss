@@ -1,0 +1,37 @@
+.header {
+    @extend %fixed;
+    z-index: 999;
+    // margin-bottom: 12rem;
+    .header_wrapper {
+        @extend %flex-justify; 
+        padding: 3rem;
+        background-color: $color-primary;
+
+        .header_logo {
+            a {
+                @extend %parag;
+                font-weight: bold;
+            }
+        }
+
+        .header_nav {
+            
+
+            a {
+                margin-left: 3rem;
+            }
+        }
+    }
+
+    .header_line {
+        display: flex;
+        justify-content: center;
+
+        .line {
+            border-bottom: 1px solid $color-secondary;
+            align-self: center;
+            width: calc(100% - 6rem);
+        }
+
+    }
+}
