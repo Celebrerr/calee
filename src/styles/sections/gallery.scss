@@ -2,13 +2,6 @@
     margin-top: 24rem;
 }
 
-.gallery_wrapper {
-    
-}
-
-.gallery_container {
-}
-
 .gallery_heading {
     @extend %flex-justify;
     margin-bottom: 12rem;
@@ -226,8 +219,6 @@
     left: 0;
     top: 0;
 
-    opacity: 0;
-
     .product_info_wrapper {
         background-color: $color-alternate;
         padding: 3rem;
@@ -238,21 +229,16 @@
         height: inherit;
     }
 
-    .product_info_materials {
-        margin-bottom: 3rem;
-
-        .product_info_materials_title {
-            margin-bottom: 1rem;
-        }
+    .product_info_materials,
+    .product_info_textiles {
+        margin-bottom: 3rem; 
     }
 
-    .product_info_textiles {
-        margin-bottom: 3rem;
-
+    .product_info_materials_title,
         .product_info_textiles_title {
             margin-bottom: 1rem;
+            font-weight: bold;
         }
-    }
 
     .product_info_details {
         display: block;

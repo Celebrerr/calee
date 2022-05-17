@@ -34,6 +34,8 @@ export default class Page {
     }
 
     initIntroAnimation() {
+        GSAP.set(this.elements.info, { y: '101%', autoAlpha: 0.5 });
+
         this.intro = GSAP.timeline({ paused: true })
             .addLabel('start')
             .from(
