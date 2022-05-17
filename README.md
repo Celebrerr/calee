@@ -1,6 +1,6 @@
 # Calè(e) Collection
 
-![alt text](https://github.com/Celebrerr/calee/blob/main/github.png?raw=true)
+![alt text](https://github.com/Celebrerr/calee/blob/main/github.jpg?raw=true)
 
 Init:
 
