@@ -6,107 +6,55 @@ import { eases } from '../utils/easing';
 
 export default class Banner {
     constructor() {
-        this.el = document.querySelector('.spotify');
-        this.menu = this.el;
-        this.menuInner = this.el.children[0];
-        console.log(this.menuInner);
+        this.element = document.querySelector('.banner');
+        this.banner = this.element;
+        this.bannerInner = this.element.children[0];
+        this.bannerButton = this.element.querySelector('.banner_button');
+        this.bannerClose = this.element.querySelector('.banner_close');
 
-        this.navMenu = document.querySelector('.nav_spotify');
-        this.navMenuText = document.querySelector('.nav_menu a');
-
-        this.action = false;
-
-        this.openMenu = document.querySelector('.spotify--open');
-
-        this.initSpotify();
-        this.animateMenu();
-        // this.animateIcon();
+        this.initBanner();
+        this.animateBanner();
 
         this.addEventListeners();
     }
 
-    initSpotify() {
-        GSAP.set(this.el, { autoAlpha: 0 });
+    initBanner() {
+        GSAP.set(this.element, { autoAlpha: 0, y: '101%' });
+
+        setTimeout(() => {
+            this.tl.play();
+        }, 1500);
     }
 
-    animateMenu() {
-        this.matchMedia = window.matchMedia('(max-width: 769px)');
-        this.isMobile = this.matchMedia.matches;
-
-        this.tlMenu = GSAP.timeline({ paused: true }).addLabel('start').to(
-            this.el,
-            {
-                duration: 0.5,
-                // height: '350px',
-                autoAlpha: 1,
-                ease: eases.power2,
-                // backgroundColor: '#afd8d6',
-            },
-            'start'
-        );
-    }
-
-    animateIcon() {
-        this.tlNavTop = GSAP.timeline({ paused: true })
-            .addLabel('start', 0)
-            .to(
-                this.navMenu,
-                {
-                    duration: 0.5,
-                    autoAlpha: 0,
-                    ease: eases.expo,
-                },
-                'start'
-            )
-            .to(
-                this.navMenu,
-                {
-                    duration: 0.5,
-                    autoAlpha: 1,
-                    ease: eases.expo,
-                },
-                'start+=1'
-            );
-    }
-
-    open() {
-        this.action = true;
-
-        this.tlMenu.play();
-        // this.tlNavTop.play();
-
-        // GSAP.to(this.navMenuText, {
-        //     delay: 0.5,
-        //     text: 'close',
-        // });
-
-        this.menu.classList.add('menu--visible');
-    }
-
-    close() {
-        this.action = false;
-
-        this.tlMenu.reverse();
-        // this.tlNavTop.reverse();
-
-        // GSAP.to(this.navMenuText, {
-        //     delay: 0.5,
-        //     text: 'menu',
-        // });
-
-        this.menu.classList.remove('menu--visible');
-    }
-
-    onClick(e) {
-        e.preventDefault();
-        !this.action ? this.open() : this.close();
-    }
-
-    onClickLinks() {
-        this.close();
+    animateBanner() {
+        this.tl = GSAP.timeline({ paused: true }).to(this.element, {
+            duration: 0.5,
+            autoAlpha: 1,
+            y: 0,
+            ease: eases.power4Out,
+        });
     }
 
     addEventListeners() {
-        this.openMenu.addEventListener('click', this.onClick.bind(this));
+        this.bannerButton.onclick = () => {
+            alert('Yooooooos, web app installed succesfully :)');
+            this.destroy();
+        };
+
+        this.bannerClose.onclick = (e) => {
+            e.preventDefault();
+            this.destroy();
+        };
+    }
+
+    destroy() {
+        this.tl.reverse();
+
+        GSAP.to(this.element, {
+            duration: 0.5,
+            onComplete: () => {
+                this.element.remove();
+            },
+        });
     }
 }

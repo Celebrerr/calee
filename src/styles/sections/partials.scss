@@ -107,3 +107,61 @@
     transform: translateY(-100%);
     background-color: $color-alternate;
 }
+
+.banner {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 60rem;
+    z-index: 900;
+    .banner_wrapper {
+        position: relative;
+        background-color: $color-alternate;
+        color: $color-secondary;
+        margin: 3rem;
+        padding: 3rem;
+        border-radius: 0.1rem;
+        box-shadow: 0px 0px 100px 20px rgba(23, 23, 23, 0.05);
+
+        .banner_close {
+            position: absolute;
+            right: 3rem;
+            top: 3rem;
+
+        }
+
+        .banner_title {
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .banner_description {
+            margin-bottom: 2rem;
+            p {
+                @extend %label;
+                margin-bottom: 0.5rem;
+            }
+
+            a {
+                @extend %label;
+                font-weight: bold;
+                text-decoration: underline;
+                
+            }
+        }
+
+        .banner_actions {
+            display: flex;
+            // justify-content: space-between;
+            align-items: flex-end;
+
+            span {
+                text-decoration: underline;
+                font-weight: bold;
+                margin-left: 3rem;
+            }
+        }
+
+        
+    }
+}

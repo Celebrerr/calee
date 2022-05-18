@@ -1,19 +1,19 @@
 import 'lazysizes';
+
 import { canvasNoise } from './utils/utility';
-
-import Preloader from './partials/Preloader';
-import Menu from './partials/Menu';
-
 import PageTransition from './animations/PageTransition';
+import Banner from './partials/Banner';
+
+// import Preloader from './partials/Preloader';
+// import Menu from './partials/Menu';
+
 import SmoothScroll from './animations/SmoothScroll';
 import Observer from './animations/Observer';
 
-import Page from './pages/Page';
-
 import Home from './pages/Home';
 import Gallery from './pages/Gallery';
-import About from './pages/About';
-import Contact from './pages/Contact';
+// import About from './pages/About';
+// import Contact from './pages/Contact';
 
 class App {
     constructor() {
@@ -32,6 +32,7 @@ class App {
     initPartials() {
         canvasNoise();
 
+        this.banner = new Banner();
         this.transition = new PageTransition();
         // this.menu = new Menu();
     }
@@ -175,4 +176,3 @@ class App {
 }
 
 new App();
-window.scrollTo(0, 0);
