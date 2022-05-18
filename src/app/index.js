@@ -161,6 +161,15 @@ class App {
         //     });
         // }
 
+        const darkMode = document.querySelector('.footer_top_dark');
+        let isOn = false;
+        darkMode.onclick = (e) => {
+            e.preventDefault();
+            !isOn ? this.page.playDarkMode() : this.page.stopDarkMode();
+
+            isOn = !isOn;
+        };
+
         const linkProject = document.querySelectorAll('.project_link');
 
         linkProject.forEach((link) => {

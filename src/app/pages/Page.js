@@ -12,6 +12,7 @@ export default class Page {
         // console.log(id);
 
         this.create();
+        this.initDarkMode();
     }
 
     create() {
@@ -77,5 +78,69 @@ export default class Page {
     }
     hideIntroAnimation() {
         this.intro.reverse();
+    }
+
+    initDarkMode() {
+        const selectorMain = {
+            body: 'body',
+            header: '.header_wrapper',
+        };
+
+        const selectorMedia = {
+            figure: 'figure',
+            info: '.product_info_wrapper',
+        };
+
+        const selectorLines = {
+            header: '.header_line',
+            footer: '.footer_line',
+        };
+
+        this.tlDark = GSAP.timeline({ paused: true })
+            .to(
+                [selectorMain.body, selectorMain.header],
+                {
+                    duration: 1,
+                    backgroundColor: '#313131',
+                    color: '#efefef',
+                    ease: eases.circIn,
+                },
+                0
+            )
+            .to(
+                [selectorMedia.figure, selectorMedia.info],
+                {
+                    duration: 1,
+                    backgroundColor: '#212121',
+                    color: '#efefef',
+                    ease: eases.circIn,
+                },
+                0
+            )
+            .to(
+                [selectorLines.header, selectorLines.footer],
+                {
+                    duration: 1,
+                    borderBottomColor: '#efefef',
+                    ease: eases.circIn,
+                },
+                0
+            );
+        // .to(
+        //     'img',
+        //     {
+        //         duration: 1,
+        //         filter: 'invert(1)',
+        //         ease: eases.circIn,
+        //     },
+        //     0
+        // );
+    }
+
+    playDarkMode() {
+        this.tlDark.play();
+    }
+    stopDarkMode() {
+        this.tlDark.reverse();
     }
 }

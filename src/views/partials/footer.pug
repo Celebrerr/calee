@@ -2,19 +2,29 @@ include ./mixins
 
 section.footer
     .footer_wrapper
-        .footer_info(class='grid', data-scroll="item")
-            .footer_link
-                a(href="https://www.linkedin.com/in/bruno-bosco"  class='hover hover--link') 
-                    |Linkedin
-            .footer_link
-                a(href="https://github.com/Celebrerr" target='blank' class='hover hover--link') 
-                    |Github
-                
+        .footer_top(class="grid")
+            .footer_top_logo
+                h4|CALÉ(E)
+                p|A collection designed by
+                    a(href="http://poolstudio.fr/" target='_blank' class="hover hover--link")|Pool  
 
-            .footer_link
-                p 
-                    span|&copy; 2022 
-                    |Bruno Bosco
-                    
-        .footer_container
-            figure
+            .footer_top_dark
+                a(href="/" class="hover hover--link") 
+                    span|☀
+                    span|Dark mode
+
+        .footer_line
+
+        .footer_bottom(class="grid")
+            .footer_bottom_craft
+                p
+                    |Manufactered by 
+                    a(href="https://www.cvl-luminaires.fr/" target='_blank' class="hover hover--link")|CVL
+            
+            .footer_bottom_development 
+                p
+                    |Designed and Developed 
+                    a(href="https://brunobosco.com/" target='_blank' class="hover hover--link")|Bruno Bosco
+            
+            .footer_bottom_backtotop 
+                a(href="/" class="hover hover--link")|Back to top

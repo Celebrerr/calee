@@ -1,37 +1,104 @@
 .header {
     @extend %fixed;
     z-index: 999;
+   
     // margin-bottom: 12rem;
     .header_wrapper {
-        @extend %flex-justify; 
-        padding: 3rem;
+        display: block;
+        width: 100%;
+        padding: 3rem 3rem 0 3rem;
         background-color: $color-primary;
+        
+        .header_container {
+            @extend %flex-justify;  
 
-        .header_logo {
-            a {
-                @extend %parag;
-                font-weight: bold;
+            .header_logo {
+                a {
+                    @extend %parag;
+                    font-weight: bold;
+                }
+            }
+    
+            .header_nav {
+                
+    
+                a {
+                    margin-left: 3rem;
+                }
             }
         }
 
-        .header_nav {
-            
-
-            a {
-                margin-left: 3rem;
-            }
+        .header_line {
+            margin-top: 3rem;
         }
+
+       
     }
 
     .header_line {
-        display: flex;
-        justify-content: center;
+        display: block;
+        width: 100%;
+        // justify-content: center;
+        border-bottom: 1px solid $color-secondary;
 
         .line {
-            border-bottom: 1px solid $color-secondary;
+            
             align-self: center;
             width: calc(100% - 6rem);
         }
 
+    }
+}
+
+.footer {
+    position: relative;
+    .footer_wrapper {
+        display: block;
+        width: 100%;
+        padding: 3rem;
+        // a {
+        //     font-weight: bold;
+        // }
+
+        .footer_top {
+
+            .footer_top_logo {
+                grid-area: c1;
+                h4 {
+                    font-size: 3rem;
+                    font-weight: bold;
+                }
+            }
+
+            .footer_top_dark {
+                grid-area: c4;
+                align-self: flex-end;
+                text-align: right;
+
+                span {
+                    @extend %parag
+                }
+            }
+        }
+
+        .footer_line {
+            border-bottom: 1px solid $color-secondary;
+            margin: 3rem 0;
+        }
+
+        .footer_bottom {
+            .footer_bottom_craft {
+                grid-area: c1;
+            }
+
+            .footer_bottom_development {
+                grid-area: c3;
+            }
+
+            .footer_bottom_backtotop {
+                grid-area: c4;
+                text-align: right;
+            }
+        }
     }
 }
