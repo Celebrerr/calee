@@ -3,26 +3,152 @@ extends ../base.pug
 block container 
     main.container(data-smoothscroll="container" data-template="home")
         section.content(data-smoothscroll="content")
-            .hero 
-                .hero_wrapper 
-                    .hero_container 
-                        .hero_media 
-                            figure.hero_figure 
-                                img.hero_image.lazyload(data-src=require("../../images/hero.jpg").default, alt="hero")
+            .home 
+                .home_wrapper 
+                    .home_media 
+                        figure.home_figure 
+                            img.home_image.lazyload(data-src=require("../../images/hero1.png").default, alt="hero")
+                    
+                    .home_content(class="grid") 
+                        .home_description.ofh
+                            p|An assembly of designs, the Calé(e) collection offers a range of geometric patterns where the sense of imbalance forms simple, linear and sophisticated objects.
                         
-                        .hero_content(class="grid") 
-                            .hero_title
-                                h1|CVL Luminaires
-                        
-                            .hero_description 
-                                p|An assembly of designs, the Calé(e) collection offers a range of geometric patterns where the sense of imbalance forms simple, linear and sophisticated objects.
+                        .home_link.ofh
+                            a(href="gallery.html" class="project_link hover hover--link")
+                                |Scroll to see the gallery &darr;
+
+            .gallery
+                .gallery_wrapper
+                    .gallery_container
+                        .gallery_heading(class="grid")
+                            .gallery_heading_title.ofh
+                                h1|Ceiling
                             
-                        .hero_link(class="grid")
-                            h4|→ Go to the gallery
+                            .gallery_heading_description.ofh
+                                p
+                                    |It is possible to cluster several pendants from one single canopy, either rectangular or circular.     
+                                    |The rectangular canopy can be custom-made into any size to suit your requirements.
+                                    |The small centered disc on the bottom always comes in finish 1.
+                        
+                        .gallery_products(class="grid" data-scroll-animation)
+                            .gallery_product
+                                .product_media
+                                    figure.product_media_figure 
+                                        img.product_media_image.lazyload(data-src=require("../../images/gallery/c1.jpg").default, alt="c1")
+                                    
+                                    +product-info
+                            
+                                .product_title 
+                                    h3|Koln
+                            
+                            .gallery_product
+                                .product_media
+                                    figure.product_media_figure 
+                                        img.product_media_image.lazyload(data-src=require("../../images/gallery/c2.jpg").default, alt="c2")
+                                    
+                                    +product-info
+                            
+                                .product_title 
+                                    h3|Daro
+
+                            .gallery_product
+                                .product_media
+                                    figure.product_media_figure 
+                                        img.product_media_image.lazyload(data-src=require("../../images/gallery/c3.jpg").default, alt="c3")
+                                    
+                                    +product-info
+                            
+                                .product_title 
+                                    h3|Flut
+                            
+                        .gallery_products(class="grid" data-scroll-animation)
+                            .gallery_product
+                                .product_media
+                                    figure.product_media_figure 
+                                        img.product_media_image.lazyload(data-src=require("../../images/gallery/c4.jpg").default, alt="c4")
+                                    
+                                    +product-info
+                            
+                                .product_title 
+                                    h3|Noln
+
+                            .gallery_product
+                                .product_media
+                                    figure.product_media_figure 
+                                        img.product_media_image.lazyload(data-src=require("../../images/gallery/c5.jpg").default, alt="c5")
+                                    
+                                    +product-info
+                            
+                                .product_title 
+                                    h3|Noln
+
+                            .gallery_product
+                                .product_media
+                                    figure.product_media_figure 
+                                        img.product_media_image.lazyload(data-src=require("../../images/gallery/c6.jpg").default, alt="c6")
+                                    
+                                    +product-info
+                            
+                                .product_title 
+                                    h3|Miaa
+            
+
+                        .gallery_heading(class="grid")
+                            .gallery_heading_title
+                                h1|Lamps
+                            
+                            .gallery_heading_description
+                                p
+                                    |Alphabet de formes, la collection Calé(e) se décline en jeu géométrique où le sens du déséquilibre forme des objets simples, linéaires et raffinés.
+                        
+                        .gallery_products(class="grid" data-scroll-animation)
+                            .gallery_product
+                                .product_media
+                                    figure.product_media_figure 
+                                        img.product_media_image.lazyload(data-src=require("../../images/gallery/l1.jpg").default, alt="l1")
+                                    
+                                    +product-info
+                            
+                                .product_title 
+                                    h3|Blua
+                            
+                            .gallery_product
+                                .product_media
+                                    figure.product_media_figure 
+                                        img.product_media_image.lazyload(data-src=require("../../images/gallery/l2.jpg").default, alt="l2")
+                                    
+                                    +product-info-lamp
+                            
+                                .product_title 
+                                    h3|Crit
+
+                            .gallery_product
+                                .product_media
+                                    figure.product_media_figure 
+                                        img.product_media_image.lazyload(data-src=require("../../images/gallery/l3.jpg").default, alt="l3")
+                                    
+                                    +product-info
+                            
+                                .product_title 
+                                    h3|Muno
+
+            .about 
+                .about_wrapper(data-scroll-animation)
+                    .about_heading
+                        h1|About
+                    
+                    .about_media 
+                        figure.about_figure.ofh 
+                            img.about_image.lazyload(data-src=require("../../images/about.jpg").default, alt="c1")
+
+                    .about_content(class="grid")
+                        .about_content_description 
+                            p|The Parisian design studio, founded in 2011 by Léa Padovani and Sébastien Kieffer, intervenes in as many domains as furniture, environment, and interior architecture. The duo POOL studies its creations in a global context, either when signing their own collections or collaborating with other workshops and manufacturers. The geographical composition where forms and colors end up as radical volumes, is the signature of Pool transdisciplinary tandem. Passionate by the know-how of craftsmen and art manufacturers and by human connections, they often act as artistic directors, a role they have had since 2017 for CVL.
+
+                        .about_content_link
+                            p|→ Pool Design Studio 
 
             include ../partials/footer
            
                         
-        
-
-
+    

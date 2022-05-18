@@ -21,7 +21,7 @@ export default class Observer {
         this.observer = new IntersectionObserver(this.callback, this.options);
 
         each(this.observerElements, (el) => {
-            const image = el.querySelectorAll('.product_media_image');
+            const image = el.querySelectorAll('img');
 
             this.tl = GSAP.timeline({ paused: true });
 
@@ -45,7 +45,7 @@ export default class Observer {
             if (entry.isIntersecting) {
                 entry.target.timeline.play();
             } else {
-                // entry.target.timeline.reverse();
+                entry.target.timeline.reverse();
             }
         });
     }

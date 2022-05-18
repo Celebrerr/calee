@@ -16,7 +16,6 @@ export default class Page {
 
         this.create();
         this.addEventListeners();
-        this.initDarkMode();
     }
 
     create() {
@@ -50,22 +49,20 @@ export default class Page {
                 },
                 0.5
             )
-            // .from(
-            //     this.selectorChildren.image,
-            //     {
-            //         duration: 0.8,
-            //         autoAlpha: 0,
-            //         scale: 0.5,
-            //         stagger: 0.5,
-            //         ease: eases.power4Out,
-            //     },
-            //     'start+=1'
-            // )
+            .from(
+                this.selectorChildren.image,
+                {
+                    duration: 2,
+                    y: '-100%',
+                    scale: 0.7,
+                    ease: eases.expoOut,
+                },
+                0
+            )
             .from(
                 [this.selectorChildren.title, this.selectorChildren.description],
                 {
                     duration: 1.3,
-                    // autoAlpha: 0,
                     y: '-101%',
                     rotate: 0.2,
                     ease: eases.expoInOut,
@@ -98,12 +95,12 @@ export default class Page {
 
         this.tlDark = GSAP.timeline({ paused: true })
             .to(
-                [selectorMain.body, selectorMain.header],
+                selectorMain.body,
                 {
                     duration: 1,
-                    backgroundColor: '#313131',
+                    background: '#313131',
                     color: '#efefef',
-                    ease: eases.circIn,
+                    ease: eases.circOut,
                 },
                 0
             )
@@ -113,7 +110,7 @@ export default class Page {
                     duration: 1,
                     backgroundColor: '#212121',
                     color: '#efefef',
-                    ease: eases.circIn,
+                    ease: eases.circOut,
                 },
                 0
             )
@@ -122,7 +119,7 @@ export default class Page {
                 {
                     duration: 1,
                     borderBottomColor: '#efefef',
-                    ease: eases.circIn,
+                    ease: eases.circOut,
                 },
                 0
             );

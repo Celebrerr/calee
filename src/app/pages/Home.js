@@ -5,14 +5,15 @@ export default class Home extends Page {
         super({
             id: 'home',
 
-            element: '.hero',
+            element: '.home',
             elements: {
-                nav: document.querySelector('.nav'),
-                nav_links: document.querySelectorAll('.nav_flex-links > a'),
+                header: document.querySelector('.header'),
+                header_links: document.querySelectorAll('.header_wrapper > div'),
 
-                image: '.hero_media',
-                title: '.hero_title h1',
-                parag: '.hero_description p',
+                description: '.home_description p',
+                title: '.home_link a',
+
+                image: '.home_media',
             },
         });
     }

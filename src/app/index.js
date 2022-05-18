@@ -4,7 +4,7 @@ import { canvasNoise } from './utils/utility';
 import PageTransition from './animations/PageTransition';
 import Banner from './partials/Banner';
 
-// import Preloader from './partials/Preloader';
+import Preloader from './partials/Preloader';
 // import Menu from './partials/Menu';
 
 import SmoothScroll from './animations/SmoothScroll';
@@ -12,18 +12,15 @@ import Observer from './animations/Observer';
 
 import Home from './pages/Home';
 import Gallery from './pages/Gallery';
-// import About from './pages/About';
-// import Contact from './pages/Contact';
 
 class App {
     constructor() {
         this.initPartials();
         this.initAnimations();
 
-        // this.initPreloader();
+        this.initPreloader();
 
         this.initContents();
-        this.initPages();
 
         this.addEventListeners();
         this.addLinkListener();
@@ -32,7 +29,6 @@ class App {
     initPartials() {
         canvasNoise();
 
-        this.banner = new Banner();
         this.transition = new PageTransition();
         // this.menu = new Menu();
     }
@@ -56,8 +52,10 @@ class App {
         await this.transition.show();
 
         this.preloader.destroy();
+        this.transition.hide();
 
-        await this.transition.hide();
+        this.banner = new Banner();
+        this.initPages();
     }
 
     initContents() {
@@ -69,11 +67,9 @@ class App {
         this.pages = {
             home: new Home(),
             gallery: new Gallery(),
-            // about: new About(),
-            // contact: new Contact(),
         };
 
-        this.page = this.pages[this.template];
+        this.page = this.pages.home;
 
         this.page.initIntroAnimation();
         this.page.showIntroAnimation();
@@ -133,27 +129,7 @@ class App {
     }
 
     addLinkListener() {
-        // const navLinks = document.querySelectorAll('.header_wrapper div a');
-
-        // for (let link of navLinks) {
-        //     link.addEventListener('click', (e) => {
-        //         e.preventDefault();
-        //         const footer = document.querySelector('.footer');
-        //         footer.scrollIntoView({ behavior: 'smooth', block: 'end', inline: 'nearest' });
-        //     });
-        // }
-
-        const darkMode = document.querySelector('.footer_top_dark');
-        let isOn = false;
-        darkMode.onclick = (e) => {
-            e.preventDefault();
-            !isOn ? this.page.playDarkMode() : this.page.stopDarkMode();
-
-            isOn = !isOn;
-        };
-
         const linkProject = document.querySelectorAll('.project_link');
-
         linkProject.forEach((link) => {
             link.onclick = (e) => {
                 e.preventDefault();
@@ -172,6 +148,17 @@ class App {
                 this.onChange({ url: href });
             };
         });
+
+        const darkMode = document.querySelector('.footer_top_dark');
+        let isOn = false;
+
+        this.page.initDarkMode();
+        darkMode.onclick = (e) => {
+            e.preventDefault();
+            !isOn ? this.page.playDarkMode() : this.page.stopDarkMode();
+
+            isOn = !isOn;
+        };
     }
 }
 

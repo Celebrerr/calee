@@ -1,0 +1,45 @@
+.about {
+    margin-bottom: 3rem;
+}
+
+.about_wrapper {
+
+}
+
+.about_heading {
+    margin-bottom: 3rem;
+}
+
+.about_media {
+    position: relative;
+    margin-bottom: 3rem;
+    overflow: hidden;
+}
+
+.about_figure {
+    position: relative;
+    width: 186rem;
+    height: 100rem;
+    margin-bottom: 3rem;
+}
+
+.about_image {
+    @extend %product_image;
+}
+
+.about_content {
+    margin-bottom: 12rem;
+    align-items: self-end;
+}
+
+.about_content_description {
+    grid-area: c1;
+    width: 200%;
+    @media (max-width: $breakpoint-tablet) {
+        width: 100%;
+     }
+}
+
+.about_content_link {
+    grid-area: c4;
+}

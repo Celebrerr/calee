@@ -23,7 +23,7 @@ export default class Banner {
 
         setTimeout(() => {
             this.tl.play();
-        }, 1500);
+        }, 2500);
     }
 
     animateBanner() {

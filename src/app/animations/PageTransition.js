@@ -12,26 +12,13 @@ export default class PageTransition {
         this.nav = document.querySelector('.nav');
     }
 
-    load() {
-        return new Promise((resolve) => {
-            GSAP.set(this.element, { rotation: 180 });
-            GSAP.from(this, {
-                duration: 2,
-                ease: 'power4.InOut',
-                onUpdate: this.onUpdate.bind(this),
-                onComplete: resolve,
-                progress: 1,
-            });
-        });
-    }
-
     show() {
         return new Promise((resolve) => {
             GSAP.timeline()
                 .to(
                     this.element,
                     {
-                        duration: 2,
+                        duration: 1.5,
                         ease: eases.expoInOut,
                         y: '0%',
                         onComplete: resolve,
@@ -65,7 +52,7 @@ export default class PageTransition {
                 .to(
                     this.element,
                     {
-                        duration: 2,
+                        duration: 1.3,
                         ease: eases.expoInOut,
                         y: '101%',
 
