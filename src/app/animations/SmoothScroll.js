@@ -6,7 +6,7 @@ export default class SmoothScroll {
 
         this.current = 0;
         this.target = 0;
-        this.ease = 0.06;
+        this.ease = 0.08;
 
         this.init();
     }

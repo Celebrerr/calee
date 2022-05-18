@@ -2,12 +2,12 @@
     @extend %fixed;
     z-index: 999;
    
-    // margin-bottom: 12rem;
     .header_wrapper {
         display: block;
         width: 100%;
         padding: 3rem 3rem 0 3rem;
         background-color: $color-primary;
+        transition: opacity 0.25s ease-in-out;
         
         .header_container {
             @extend %flex-justify;  
@@ -55,7 +55,7 @@
     .footer_wrapper {
         display: block;
         width: 100%;
-        padding: 3rem;
+        margin-bottom: 3rem;
         // a {
         //     font-weight: bold;
         // }
@@ -101,4 +101,9 @@
             }
         }
     }
+}
+
+.page-transition {
+    transform: translateY(-100%);
+    background-color: $color-alternate;
 }

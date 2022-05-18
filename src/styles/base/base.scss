@@ -28,34 +28,42 @@ body {
 }
 
 ::-webkit-scrollbar {
-    display: none;
+    width: 1rem;
+    background-color: $color-primary;
+    @media (max-width: $breakpoint-tablet) {
+        display: none;
+    }
 }
 
-main {
-    padding: 0 3rem;
+::-webkit-scrollbar-thumb {
+    background-color: $color-alternate;
 }
 
-// @media (min-width: $breakpoint-tablet) {
-//     [data-smoothscroll='container'] {
-//         position: fixed;
-//         top: 0;
-//         left: 0;
-//         width: 100%;
-//         height: 100vh;
-//     }
 
-//     [data-smoothscroll='content'] {
-//         position: absolute;
-//         top: 0;
-//         left: 0;
-//         right: 0;
-//         width: 100%;
-//         height: auto;
-//         will-change: transform;
-//     }
-// }
 
-canvas {
+@media (min-width: $breakpoint-tablet) {
+    [data-smoothscroll='container'] {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+    }
+
+    [data-smoothscroll='content'] {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: auto;
+        will-change: transform;
+
+        padding: 0 3rem;
+    }
+}
+
+main, canvas {
     pointer-events: none;
 }
 

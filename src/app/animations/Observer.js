@@ -1,5 +1,7 @@
 import GSAP from 'gsap';
+
 import { eases } from '../utils/easing';
+import each from 'lodash/each';
 
 export default class Observer {
     constructor() {
@@ -18,21 +20,17 @@ export default class Observer {
     init() {
         this.observer = new IntersectionObserver(this.callback, this.options);
 
-        this.observerElements.forEach((el) => {
+        each(this.observerElements, (el) => {
             const image = el.querySelectorAll('.product_media_image');
 
             this.tl = GSAP.timeline({ paused: true });
 
-            this.tl.from(
-                image,
-                {
-                    duration: 2,
-                    y: '-101%',
-                    stagger: 0.15,
-                    ease: eases.power4Out,
-                },
-                0.5
-            );
+            this.tl.from(image, {
+                duration: 2,
+                y: '-101%',
+                stagger: 0.15,
+                ease: eases.expoInOut,
+            });
 
             el.timeline = this.tl;
         });
@@ -43,11 +41,11 @@ export default class Observer {
     }
 
     callback(entries, observer) {
-        entries.forEach((entry) => {
+        each(entries, (entry) => {
             if (entry.isIntersecting) {
                 entry.target.timeline.play();
             } else {
-                entry.target.timeline.reverse();
+                // entry.target.timeline.reverse();
             }
         });
     }

@@ -1,5 +1,8 @@
 import Page from './Page';
+
 import GSAP from 'gsap';
+
+import each from 'lodash/each';
 import { eases } from '../utils/easing';
 
 export default class Gallery extends Page {
@@ -22,6 +25,8 @@ export default class Gallery extends Page {
         });
 
         this.addEventListeners();
+        GSAP.set(this.elements.info, { y: '101%' });
+        GSAP.set('main', { pointerEvents: 'auto' });
     }
 
     create() {
@@ -29,23 +34,15 @@ export default class Gallery extends Page {
     }
 
     addEventListeners() {
-        // const element = this.elements.media;
-        // for (let i = 0; i < element.length; i++) {
-        //     console.log(i);
-        //     element[i].addEventListener('mouseenter', this.onMouseEnter.bind(this));
-        //     element[i].addEventListener('mouseleave', this.onMouseLeave.bind(this));
-        // }
-
-        GSAP.utils.toArray(this.elements.media).forEach((media) => {
+        each(this.elements.media, (media) => {
             const info = media.querySelector('.product_info');
 
             const tl = GSAP.timeline({ paused: true }).to(
                 info,
                 {
-                    duration: 0.75,
-                    autoAlpha: 1,
+                    duration: 1.5,
                     y: 0,
-                    ease: 'circ.easeIn',
+                    ease: eases.expoInOut,
                 },
                 0.1
             );

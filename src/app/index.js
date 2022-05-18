@@ -18,38 +18,32 @@ import Contact from './pages/Contact';
 class App {
     constructor() {
         this.initPartials();
-        // this.checkAnimations();
+        this.initAnimations();
 
         // this.initPreloader();
 
-        this.initAnimations();
         this.initContents();
         this.initPages();
 
         this.addEventListeners();
         this.addLinkListener();
-
-        this.prevScrollPos = window.pageYOffset;
     }
 
     initPartials() {
-        this.transition = new PageTransition();
-        this.observer = new Observer();
-
-        // this.menu = new Menu();
         canvasNoise();
-    }
 
-    checkAnimations() {
-        // const isMobile = window.matchMedia('(max-width: 769px)');
-        // const checkIsMobile = isMobile.matches;
-        // if (!checkIsMobile) {
-        //     this.initAnimations();
-        // }
+        this.transition = new PageTransition();
+        // this.menu = new Menu();
     }
 
     initAnimations() {
-        // new SmoothScroll();
+        const isMobile = window.matchMedia('(max-width: 769px)');
+        const checkIsMobile = isMobile.matches;
+
+        if (!checkIsMobile) {
+            this.smoothScroll = new SmoothScroll();
+        }
+        this.observer = new Observer();
     }
 
     initPreloader() {
@@ -91,16 +85,6 @@ class App {
         });
     }
 
-    onScroll() {
-        if (this.template !== 'home' && this.template !== 'about') return;
-
-        const arrowScroll = document.querySelector('.hero_scroll');
-        let currentScrollPos = window.pageYOffset;
-
-        this.prevScrollPos > currentScrollPos ? (arrowScroll.style.opacity = '1') : (arrowScroll.style.opacity = '0');
-        this.prevScrollPos = currentScrollPos;
-    }
-
     async onChange({ url, push = true }) {
         await this.transition.show();
 
@@ -127,12 +111,10 @@ class App {
 
             this.page = this.pages[this.template];
 
-            await this.transition.hide();
+            this.transition.hide();
 
-            // this.checkAnimations();
-
+            this.initAnimations();
             this.initPages();
-            this.observer = new Observer();
 
             this.addLinkListener();
         } else {
@@ -147,7 +129,6 @@ class App {
     addEventListeners() {
         window.addEventListener('popstate', this.onPopSate.bind(this));
         window.addEventListener('orientationchange', this.onOrientationChange.bind(this));
-        // window.addEventListener('scroll', this.onScroll.bind(this));
     }
 
     addLinkListener() {
