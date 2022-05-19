@@ -1,5 +1,5 @@
 .about {
-    margin-bottom: 3rem;
+    @extend %mb-sections;
 }
 
 .about_wrapper {
@@ -7,7 +7,7 @@
 }
 
 .about_heading {
-    margin-bottom: 3rem;
+    margin-bottom: 6rem;
 }
 
 .about_media {
@@ -28,18 +28,32 @@
 }
 
 .about_content {
-    margin-bottom: 12rem;
     align-items: self-end;
+    @media (max-width: $breakpoint-tablet) {
+        align-items: self-start;
+    }
 }
 
 .about_content_description {
     grid-area: c1;
     width: 200%;
+
     @media (max-width: $breakpoint-tablet) {
         width: 100%;
-     }
+        margin-bottom: 3rem;
+    }
 }
 
 .about_content_link {
     grid-area: c4;
+    p {
+        text-align: right;
+
+        @media (max-width: $breakpoint-tablet) {
+            text-align: left;
+        }
+    }
+    a {
+        font-weight: bold;
+    }
 }

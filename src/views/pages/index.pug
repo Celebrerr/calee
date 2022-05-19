@@ -6,23 +6,26 @@ block container
             .home 
                 .home_wrapper 
                     .home_media 
-                        figure.home_figure 
-                            img.home_image.lazyload(data-src=require("../../images/hero1.png").default, alt="hero")
+                        figure.home_figure.is-desktop
+                            img.home_image.lazyload(data-src=require("../../images/hero.png").default, alt="hero")
+
+                        figure.home_figure.is-mobile
+                            img.home_image.lazyload(data-src=require("../../images/hero_mob.png").default, alt="hero")
                     
                     .home_content(class="grid") 
                         .home_description.ofh
                             p|An assembly of designs, the Calé(e) collection offers a range of geometric patterns where the sense of imbalance forms simple, linear and sophisticated objects.
                         
                         .home_link.ofh
-                            a(href="gallery.html" class="project_link hover hover--link")
-                                |Scroll to see the gallery &darr;
+                            span|Scroll 
+                            span|&darr;
 
             .gallery
                 .gallery_wrapper
                     .gallery_container
                         .gallery_heading(class="grid")
                             .gallery_heading_title.ofh
-                                h1|Ceiling
+                                h2|Ceiling
                             
                             .gallery_heading_description.ofh
                                 p
@@ -38,8 +41,9 @@ block container
                                     
                                     +product-info
                             
-                                .product_title 
+                                .product_title
                                     h3|Koln
+                                    span|+
                             
                             .gallery_product
                                 .product_media
@@ -50,6 +54,7 @@ block container
                             
                                 .product_title 
                                     h3|Daro
+                                    span|+
 
                             .gallery_product
                                 .product_media
@@ -60,6 +65,7 @@ block container
                             
                                 .product_title 
                                     h3|Flut
+                                    span|+
                             
                         .gallery_products(class="grid" data-scroll-animation)
                             .gallery_product
@@ -71,6 +77,7 @@ block container
                             
                                 .product_title 
                                     h3|Noln
+                                    span|+
 
                             .gallery_product
                                 .product_media
@@ -81,6 +88,7 @@ block container
                             
                                 .product_title 
                                     h3|Noln
+                                    span|+
 
                             .gallery_product
                                 .product_media
@@ -91,11 +99,12 @@ block container
                             
                                 .product_title 
                                     h3|Miaa
+                                    span|+
             
 
                         .gallery_heading(class="grid")
                             .gallery_heading_title
-                                h1|Lamps
+                                h2|Lamps
                             
                             .gallery_heading_description
                                 p
@@ -111,7 +120,8 @@ block container
                             
                                 .product_title 
                                     h3|Blua
-                            
+                                    span|+      
+
                             .gallery_product
                                 .product_media
                                     figure.product_media_figure 
@@ -121,6 +131,7 @@ block container
                             
                                 .product_title 
                                     h3|Crit
+                                    span|+
 
                             .gallery_product
                                 .product_media
@@ -131,6 +142,7 @@ block container
                             
                                 .product_title 
                                     h3|Muno
+                                    span|+
 
             .about 
                 .about_wrapper(data-scroll-animation)
@@ -143,10 +155,34 @@ block container
 
                     .about_content(class="grid")
                         .about_content_description 
-                            p|The Parisian design studio, founded in 2011 by Léa Padovani and Sébastien Kieffer, intervenes in as many domains as furniture, environment, and interior architecture. The duo POOL studies its creations in a global context, either when signing their own collections or collaborating with other workshops and manufacturers. The geographical composition where forms and colors end up as radical volumes, is the signature of Pool transdisciplinary tandem. Passionate by the know-how of craftsmen and art manufacturers and by human connections, they often act as artistic directors, a role they have had since 2017 for CVL.
+                            p|The Parisian design studio, founded in 2011 by Léa Padovani and Sébastien Kieffer, intervenes in as many domains as furniture, environment, and interior architecture. 
+                           
+                            p|The duo POOL studies its creations in a global context, either when signing their own collections or collaborating with other workshops and manufacturers. 
+                            
+                            p|The geographical composition where forms and colors end up as radical volumes, is the signature of Pool transdisciplinary tandem. Passionate by the know-how of craftsmen and art manufacturers and by human connections, they often act as artistic directors, a role they have had since 2017 for CVL.
 
                         .about_content_link
-                            p|→ Pool Design Studio 
+                            p|A collection designed by 
+                                a(href="http://poolstudio.fr/" target='_blank' class="hover hover--link")|Pool
+
+            .contact
+                .contact_wrapper(class="grid" data-scroll-animation)
+                    .contact_contents
+                        .contact_heading 
+                            h1|Get in touch
+                            
+                        .contact_flex 
+                            .contact_description 
+                                p|From interior to the moon.
+                                p|Furniture that offers intelligent solutions, integrating sustainability, quality, design, better cost and, most importantly, well-being.
+
+                            .contact_social
+                                p|Instagram 
+                                p|Dribbble
+
+                    .contact_media.ofh
+                        figure.contact_figure 
+                            img.contact_image.lazyload(data-src=require("../../images/contact.jpg").default, alt="contact")
 
             include ../partials/footer
            

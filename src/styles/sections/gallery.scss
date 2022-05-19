@@ -1,5 +1,5 @@
 .gallery {
-    margin-top: 24rem;
+    @extend %mb-sections;
 }
 
 .gallery_heading {
@@ -24,6 +24,7 @@
 .gallery_products {
     align-items: end;
     -webkit-align-items: end;
+    margin-bottom: 12rem;
 
     @media (max-width: $breakpoint-tablet) {
         align-items: start;
@@ -34,11 +35,9 @@
 .gallery_product { 
     position: relative;
     margin-bottom: 3rem;
- 
-    // overflow: hidden;
 
     @media (max-width: $breakpoint-tablet) {
-       margin-bottom: 3rem;
+       margin-bottom: 6rem;
     }
 
     .product_media {
@@ -46,63 +45,88 @@
         margin-bottom: 3rem;
         overflow: hidden;
     }
+
+    .product_title {
+        display: inline-flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        width: 100%;
+
+        overflow: hidden;
+        span {
+            font-size: 3rem;
+            cursor: pointer;
+           
+            width: 4rem;
+            height: 4rem;
+            
+            text-align: center;
+            line-height: 4rem;
+        }
+    }
 }
 
 .gallery_products:nth-child(2) {
-    margin-bottom: 12rem;
-    .gallery_product:nth-child(1) {
-        .product_media {
-            grid-area: c1;
+    @media (max-width: $breakpoint-tablet) {
+        margin-bottom: 0;
+     }
+    .gallery_product {
+        &:nth-child(1) {
+            .product_media {
+                grid-area: c1;
 
-            .product_media_figure {
-                position: relative;
-                width: 44.3rem;
-                height: 60rem;
-            }
-        
-            .product_media_image {
-               @extend %product_image;
-            }
-        }
-    }
-    
-    .gallery_product:nth-child(2) {
-        .product_media {
-            grid-area: c2;
-        
-            .product_media_figure {
-                position: relative;
-                width: 91.6rem;
-                height: 69rem;
-            }
-        
-            .product_media_image {
-               @extend %product_image;
+                .product_media_figure {
+                    position: relative;
+                    width: 44.3rem;
+                    height: 60rem;
+                }
+            
+                .product_media_image {
+                @extend %product_image;
+                }
             }
         }
-    }
-    
-    .gallery_product:nth-child(3) {
-        .product_media {
-            grid-area: c3;
         
-            .product_media_figure {
-                position: relative;
-                width: 44.3rem;
-                height: 45rem;
-            }
-        
-            .product_media_image {
-               @extend %product_image;
+        &:nth-child(2) {
+            .product_media {
+                grid-area: c2;
+            
+                .product_media_figure {
+                    position: relative;
+                    width: 91.6rem;
+                    height: 69rem;
+                }
+            
+                .product_media_image {
+                @extend %product_image;
+                }
             }
         }
+        
+        &:nth-child(3) {
+            .product_media {
+                grid-area: c3;
+            
+                .product_media_figure {
+                    position: relative;
+                    width: 44.3rem;
+                    height: 45rem;
+                }
+            
+                .product_media_image {
+                @extend %product_image;
+                }
+            }
+        }
+
+        // &:last-child {
+        //     margin-bottom: 0;
+        // }
     }
     
 }
 
 .gallery_products:nth-child(3) {
-    margin-bottom: 12rem;
-
     .gallery_product { 
         &:nth-child(1) {
             .product_media {
@@ -151,13 +175,19 @@
                 }
             }
         }
+        @media (max-width: $breakpoint-tablet) {
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
 
     }
 }
 
 .gallery_products:nth-child(5) {
-    margin-bottom: 12rem;
-
+    @media (max-width: $breakpoint-tablet) {
+        margin-bottom: 0;
+    }
     .gallery_product { 
         &:nth-child(1) {
             .product_media {
@@ -206,6 +236,13 @@
                 }
             }
         }
+        @media (max-width: $breakpoint-tablet) {
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+       
     }
 }
 

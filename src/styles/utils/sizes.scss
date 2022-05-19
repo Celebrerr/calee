@@ -16,20 +16,22 @@ $font-mori: 'Mori';
     font-family: $font-questrial;
     font-size: 7.4rem;
     line-height: 8rem;
-    // @media (max-width: $breakpoint-mobile) {
-    //     font-size: 8.4rem;
-    //     line-height: 6.5rem;
 
-    // }
+    @media (max-width: $breakpoint-mobile) {
+        font-size: 8.4rem;
+        line-height: 9rem;
+    }
 }
 
 %title-h2 {
     font-family: $font-questrial;
     font-size: 5.9rem;
     line-height: 7rem;
-    // @media (max-width: $breakpoint-mobile) {
-    //     font-size: 6.9rem;
-    // }
+
+    @media (max-width: $breakpoint-mobile) {
+        font-size: 6.9rem;
+        line-height: 8rem;
+    }
 }
 
 %title-h3 {
@@ -37,10 +39,10 @@ $font-mori: 'Mori';
     font-size: 4.5rem;
     // line-height: 5rem;
 
-    // @media (max-width: $breakpoint-mobile) {
-    //     font-size: 5.1rem;
+    @media (max-width: $breakpoint-mobile) {
+        font-size: 5.5rem;
         
-    // }
+    }
 }
 
 %title-h4 {
@@ -48,25 +50,29 @@ $font-mori: 'Mori';
     font-size: 3.8rem;
     line-height: 4.5rem;
 
-    // @media (max-width: $breakpoint-mobile) {
-    //     font-size: 4.5rem;
-        
-    // }
+    @media (max-width: $breakpoint-mobile) {
+        font-size: 3.8rem;
+        line-height: 5.5rem;
+    }
 }
 
 %parag {
     font-family: $font-mori;
     font-size: 2.0rem;
-    line-height: 2.4rem;
+    line-height: 2.8rem;
 
-    // @media (max-width: $breakpoint-mobile) {
-    //     font-size: 3.0rem;
-    //     line-height: 3.4rem;
-    // }
+    @media (max-width: $breakpoint-mobile) {
+        font-size: 3.0rem;
+        line-height: 4rem;
+    }
 }
 
 %label {
     font-family: $font-mori;
     font-size: 1.6rem;
     line-height: 2rem;
+    @media (max-width: $breakpoint-mobile) {
+        font-size: 2.6rem;
+        line-height: 2.4rem;
+    }
 }

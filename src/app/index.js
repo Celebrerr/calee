@@ -3,6 +3,7 @@ import 'lazysizes';
 import { canvasNoise } from './utils/utility';
 import PageTransition from './animations/PageTransition';
 import Banner from './partials/Banner';
+import Card from './partials/Card';
 
 import Preloader from './partials/Preloader';
 // import Menu from './partials/Menu';
@@ -21,6 +22,7 @@ class App {
         this.initPreloader();
 
         this.initContents();
+        this.initPages();
 
         this.addEventListeners();
         this.addLinkListener();
@@ -43,6 +45,15 @@ class App {
         this.observer = new Observer();
     }
 
+    initPages() {
+        this.pages = {
+            home: new Home(),
+            gallery: new Gallery(),
+        };
+
+        this.page = this.pages.home;
+    }
+
     initPreloader() {
         this.preloader = new Preloader();
         this.preloader.once('completed', this.onPreloaded.bind(this));
@@ -55,24 +66,14 @@ class App {
         this.transition.hide();
 
         this.banner = new Banner();
-        this.initPages();
+        this.card = new Card();
+        this.page.initIntroAnimation();
+        this.page.showIntroAnimation();
     }
 
     initContents() {
         this.content = document.querySelector('.container');
         this.template = this.content.getAttribute('data-template');
-    }
-
-    initPages() {
-        this.pages = {
-            home: new Home(),
-            gallery: new Gallery(),
-        };
-
-        this.page = this.pages.home;
-
-        this.page.initIntroAnimation();
-        this.page.showIntroAnimation();
     }
 
     onPopSate() {
@@ -158,6 +159,12 @@ class App {
             !isOn ? this.page.playDarkMode() : this.page.stopDarkMode();
 
             isOn = !isOn;
+        };
+
+        const goTop = document.querySelector('.footer_bottom_backtotop');
+        goTop.onclick = (e) => {
+            e.preventDefault();
+            document.querySelector('.home').scrollIntoView({ behavior: 'smooth' });
         };
     }
 }

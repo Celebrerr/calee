@@ -1,0 +1,53 @@
+.contact {
+    position: relative;
+    @extend %mb-sections;
+}
+
+.contact_wrapper {
+    height: 100%;
+}
+
+.contact_contents {
+    grid-area: c1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .contact_heading {
+        @media (max-width: $breakpoint-tablet) {
+           margin-bottom: 6rem;
+        }
+    }
+
+    .contact_flex {
+        height: inherit;
+
+        .contact_description {
+            margin-bottom: 6rem;  
+        }
+
+        .contact_social {
+            @media (max-width: $breakpoint-tablet) {
+                margin-bottom: 6rem;
+             }
+            p {
+                font-weight: bold;
+                margin-bottom: 0.5rem;
+            }
+        }
+    }
+}
+
+.contact_media {
+    grid-area: c3 / c3 / c3 / c4;
+
+    .contact_figure {
+        position: relative;
+        width: 91.2rem;
+        height: 126rem;
+
+        .contact_image {
+            @extend %product_image;
+        }
+    }
+}

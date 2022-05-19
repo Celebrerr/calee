@@ -25,12 +25,16 @@ export default class Observer {
 
             this.tl = GSAP.timeline({ paused: true });
 
-            this.tl.from(image, {
-                duration: 2,
-                y: '-101%',
-                stagger: 0.15,
-                ease: eases.expoInOut,
-            });
+            this.tl.from(
+                image,
+                {
+                    duration: 2,
+                    y: '-101%',
+                    stagger: 0.15,
+                    ease: eases.expoInOut,
+                },
+                0
+            );
 
             el.timeline = this.tl;
         });
