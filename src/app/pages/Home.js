@@ -10,8 +10,8 @@ export default class Home extends Page {
                 header: document.querySelector('.header'),
                 header_links: document.querySelectorAll('.header_wrapper > div'),
 
-                description: '.home_description p',
-                title: '.home_link a',
+                description: '.home_description > p',
+                label: '.home_label > span',
 
                 image: '.home_media',
             },

@@ -46,13 +46,11 @@
 
 .about_content_link {
     grid-area: c4;
-    p {
-        text-align: right;
-
-        @media (max-width: $breakpoint-tablet) {
-            text-align: left;
-        }
+    text-align: right;
+    @media (max-width: $breakpoint-tablet) {
+        text-align: left;
     }
+    
     a {
         font-weight: bold;
     }

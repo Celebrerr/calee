@@ -16,7 +16,7 @@ block container
                         .home_description.ofh
                             p|An assembly of designs, the Calé(e) collection offers a range of geometric patterns where the sense of imbalance forms simple, linear and sophisticated objects.
                         
-                        .home_link.ofh
+                        .home_label.ofh
                             span|Scroll 
                             span|&darr;
 
@@ -149,9 +149,13 @@ block container
                     .about_heading
                         h1|About
                     
-                    .about_media 
+                    .about_media.is-desktop 
                         figure.about_figure.ofh 
-                            img.about_image.lazyload(data-src=require("../../images/about.jpg").default, alt="c1")
+                            img.about_image.lazyload(data-src=require("../../images/about2.jpg").default, alt="c1")
+
+                    .about_media.is-mobile
+                        figure.about_figure.ofh 
+                            img.about_image.lazyload(data-src=require("../../images/about2-mob.jpg").default, alt="c1")
 
                     .about_content(class="grid")
                         .about_content_description 
@@ -161,9 +165,8 @@ block container
                             
                             p|The geographical composition where forms and colors end up as radical volumes, is the signature of Pool transdisciplinary tandem. Passionate by the know-how of craftsmen and art manufacturers and by human connections, they often act as artistic directors, a role they have had since 2017 for CVL.
 
-                        .about_content_link
-                            p|A collection designed by 
-                                a(href="http://poolstudio.fr/" target='_blank' class="hover hover--link")|Pool
+                        .about_content_link 
+                            a(href="http://poolstudio.fr/" target='_blank' class="hover hover--link")|Pool Design Studio
 
             .contact
                 .contact_wrapper(class="grid" data-scroll-animation)

@@ -3,7 +3,6 @@
     z-index: 800;
    
     .header_wrapper {
-        display: block;
         width: 100%;
         padding: 3rem 3rem 0 3rem;
         // background-color: $color-primary;
@@ -12,7 +11,6 @@
         .header_container {
             display: flex;
             justify-content: space-between;
-            align-items: flex-end;
 
             .header_logo {
                 a {
@@ -22,8 +20,16 @@
             }
     
             .header_nav {
+                @media (max-width: $breakpoint-tablet) {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-end;  
+                }
                 a {
                     margin-left: 3rem;
+                    @media (max-width: $breakpoint-tablet) {
+                        margin-left: 0;
+                    }
                 }
             }
         }
@@ -61,13 +67,12 @@
         // }
 
         .footer_top {
-
             .footer_top_logo {
                 grid-area: c1;
                 h4 {
                     font-size: 3rem;
                     font-weight: bold;
-                    line-height: 2.5rem;
+                    line-height: 4rem;
                 }
             }
 
@@ -90,20 +95,26 @@
         .footer_bottom {
             .footer_bottom_craft {
                 grid-area: c1;
+                a {
+                    font-weight: bold;
+                }
+                
             }
 
             .footer_bottom_development {
                 grid-area: c3;
+                a {
+                    font-weight: bold;
+                }
             }
 
             .footer_bottom_backtotop {
                 grid-area: c4;
                 text-align: right;
-                overflow: hidden;               
+                overflow: hidden;  
             }
         }
     }
-
 }
 
 .page-transition {
@@ -187,7 +198,7 @@
     left: 0;
     bottom: 0;
     width: 100%;
-    height: 100vh;
+    height: 100%;
 
     z-index: 900;
     .loader_wrapper {
@@ -203,7 +214,7 @@
             align-items: flex-start;
 
             .loader_desc p{
-                line-height: 3rem;
+                line-height: 6rem;
                 font-weight: bold;
             }
     

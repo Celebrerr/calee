@@ -34,8 +34,9 @@ body {
     background: $color-primary;
     color: $color-secondary;
 
-    overscroll-behavior: none;
-    scroll-behavior: none;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-text-size-adjust: none;
+    -webkit-font-smoothing: antialiased;
 
 }
 
@@ -118,14 +119,11 @@ main, canvas {
     }
 }
 
-.grid-1 {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 1fr;
-    grid-column-gap: 6rem;
-    grid-template-areas: 'left right';
+.grid-footer {
     @media (max-width: $breakpoint-tablet) {
-        display: block;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: 'c1 c4';
     }
 }
 
@@ -179,6 +177,7 @@ a {
 button {
     outline: none;
     border: none;
+    
     
     // padding: 1rem 4rem;
     background-color: transparent;

@@ -60,7 +60,7 @@ export default class Page {
                 0
             )
             .from(
-                [this.selectorChildren.title, this.selectorChildren.description],
+                [this.selectorChildren.description, this.selectorChildren.label],
                 {
                     duration: 1.3,
                     y: '-101%',
@@ -84,7 +84,7 @@ export default class Page {
         };
 
         const selectorMedia = {
-            figure: 'figure',
+            figure: 'figure:not(.home_figure)',
             info: '.product_info_wrapper',
         };
 
@@ -123,15 +123,6 @@ export default class Page {
                 },
                 0
             );
-        // .to(
-        //     'img',
-        //     {
-        //         duration: 1,
-        //         filter: 'invert(1)',
-        //         ease: eases.circIn,
-        //     },
-        //     0
-        // );
     }
     playDarkMode() {
         this.tlDark.play();

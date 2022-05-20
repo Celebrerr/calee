@@ -1,12 +1,11 @@
 import 'lazysizes';
 
-import { canvasNoise } from './utils/utility';
+import { canvasNoise, calcMobileViewport } from './utils/utility';
 import PageTransition from './animations/PageTransition';
 import Banner from './partials/Banner';
 import Card from './partials/Card';
 
 import Preloader from './partials/Preloader';
-// import Menu from './partials/Menu';
 
 import SmoothScroll from './animations/SmoothScroll';
 import Observer from './animations/Observer';
@@ -30,9 +29,9 @@ class App {
 
     initPartials() {
         canvasNoise();
+        calcMobileViewport('.home_wrapper');
 
         this.transition = new PageTransition();
-        // this.menu = new Menu();
     }
 
     initAnimations() {
@@ -130,26 +129,6 @@ class App {
     }
 
     addLinkListener() {
-        const linkProject = document.querySelectorAll('.project_link');
-        linkProject.forEach((link) => {
-            link.onclick = (e) => {
-                e.preventDefault();
-
-                const { href } = link;
-
-                // if (link.classList.contains('menu-link')) {
-                //     this.menu.onClickLinks();
-                //     setTimeout(() => {
-                //         this.onChange({ url: href });
-                //     }, 1100);
-
-                //     return;
-                // }
-
-                this.onChange({ url: href });
-            };
-        });
-
         const darkMode = document.querySelector('.footer_top_dark');
         let isOn = false;
 
@@ -164,7 +143,9 @@ class App {
         const goTop = document.querySelector('.footer_bottom_backtotop');
         goTop.onclick = (e) => {
             e.preventDefault();
-            document.querySelector('.home').scrollIntoView({ behavior: 'smooth' });
+            document.querySelector('.home').scrollIntoView({
+                behavior: 'smooth',
+            });
         };
     }
 }

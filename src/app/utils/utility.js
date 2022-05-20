@@ -61,3 +61,17 @@ export function canvasNoise() {
 
     noise(ctx);
 }
+
+export function calcMobileViewport(element) {
+    const rootElement = document.querySelector(element);
+    const viewportHeight = rootElement.getBoundingClientRect().height;
+    const windowtHeight = window.innerHeight;
+    const browserBar = viewportHeight - windowtHeight;
+
+    rootElement.style.height = `calc(100vh - ${browserBar}px)`;
+}
+
+//? Other utility for safari only media selecotr
+// if (navigator.userAgent.search('Safari') >= 0 && navigator.userAgent.search('Chrome') < 0) {
+//     document.querySelector(element).className += ' safari';
+// }
