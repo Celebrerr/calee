@@ -8,8 +8,6 @@ export default class Card extends Gallery {
     constructor() {
         super({});
 
-        console.log(this);
-
         this.initCard();
         this.addEventListeners();
 

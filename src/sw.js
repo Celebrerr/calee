@@ -1,13 +1,4 @@
-const filesToCache = [
-    '/',
-    'main.css',
-    'main.js',
-    'index.html',
-    '404.html',
-    'about.html',
-    'gallery.html',
-    'contact.html',
-];
+const filesToCache = ['/', 'main.css', 'main.js', 'index.html', '404.html'];
 const staticCacheName = 'cache-v1';
 
 self.addEventListener('install', (event) => {

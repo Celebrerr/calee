@@ -12,7 +12,7 @@ const dirApp = path.join(__dirname, 'src/app');
 const dirStatic = path.join(__dirname, 'static');
 const dirNode = 'node_modules';
 
-const pages = ['index', 'gallery'];
+const pages = ['index', '404'];
 
 const mapPages = pages.map((file) => {
     return new HtmlWebpackPlugin({
@@ -25,8 +25,8 @@ module.exports = {
     entry: [
         path.join(dirApp, 'index.js'),
         path.join(dirStyles, 'index.scss'),
-        // path.join(__dirname, 'src/pwa.js'),
-        // path.join(__dirname, 'src/sw.js'),
+        path.join(__dirname, 'src/pwa.js'),
+        path.join(__dirname, 'src/sw.js'),
     ],
     resolve: {
         modules: [dirStyles, dirApp, dirStatic, dirNode],
@@ -38,9 +38,9 @@ module.exports = {
         new CopyWebpackPlugin({
             patterns: [
                 { from: path.resolve(__dirname, 'static'), to: 'static' },
-                // { from: path.resolve(__dirname, 'src/site.webmanifest'), to: '' },
-                // { from: path.resolve(__dirname, 'src/pwa.js'), to: '' },
-                // { from: path.resolve(__dirname, 'src/sw.js'), to: '' },
+                { from: path.resolve(__dirname, 'src/site.webmanifest'), to: '' },
+                { from: path.resolve(__dirname, 'src/pwa.js'), to: '' },
+                { from: path.resolve(__dirname, 'src/sw.js'), to: '' },
             ],
         }),
 

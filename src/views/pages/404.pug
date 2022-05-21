@@ -3,10 +3,14 @@ extends ../base.pug
 include ../partials/mixins
 
 block container 
-    main.container(data-smoothscroll="container" data-template="404")
+    main.container(data-smoothscroll="container" data-template="error")
         section.content(data-smoothscroll="content")
-           
+            .error  
+                .error_wrapper(class="utiliy-MobileViewport")
+                    .error_container
+                        h1|404
 
-            
-                    
-                        
+                        h2|La pagina che stai cercando non esiste.
+
+                        .error_link
+                            a(href="/" class='project_link hover hover--link')|Ritorna alla home 

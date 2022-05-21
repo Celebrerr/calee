@@ -2,7 +2,6 @@ import GSAP from 'gsap';
 import Component from '../partials/Component';
 
 import { each } from 'lodash';
-
 import { eases } from '../utils/easing';
 
 export default class Preload extends Component {
@@ -32,6 +31,8 @@ export default class Preload extends Component {
     }
 
     initLoader() {
+        if (this.imageLength === 0) this.onAssetLoaded();
+
         each(this.elements.images, (element) => {
             let img = new Image();
 
@@ -46,6 +47,9 @@ export default class Preload extends Component {
         this.length += 1;
 
         let percent = this.length / this.imageLength;
+
+        if (this.imageLength === 0) percent = 1;
+
         this.elements.perc.innerHTML = `${Math.round(percent * 100)}`;
 
         GSAP.to(this.elements.line, {

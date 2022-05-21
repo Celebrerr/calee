@@ -4,7 +4,7 @@ block container
     main.container(data-smoothscroll="container" data-template="home")
         section.content(data-smoothscroll="content")
             .home 
-                .home_wrapper 
+                .home_wrapper(class="utiliy-mobileViewport")
                     .home_media 
                         figure.home_figure.is-desktop
                             img.home_image.lazyload(data-src=require("../../images/hero.png").default, alt="hero")

@@ -11,7 +11,7 @@ import SmoothScroll from './animations/SmoothScroll';
 import Observer from './animations/Observer';
 
 import Home from './pages/Home';
-import Gallery from './pages/Gallery';
+import Error from './pages/Error';
 
 class App {
     constructor() {
@@ -24,12 +24,11 @@ class App {
         this.initPages();
 
         this.addEventListeners();
-        this.addLinkListener();
     }
 
     initPartials() {
         canvasNoise();
-        calcMobileViewport('.home_wrapper');
+        // calcMobileViewport('.utiliy-mobileViewport');
 
         this.transition = new PageTransition();
     }
@@ -44,13 +43,20 @@ class App {
         this.observer = new Observer();
     }
 
+    initContents() {
+        this.content = document.querySelector('.container');
+        this.template = this.content.getAttribute('data-template');
+    }
+
     initPages() {
         this.pages = {
             home: new Home(),
-            gallery: new Gallery(),
+            error: new Error(),
         };
 
-        this.page = this.pages.home;
+        this.page = this.pages[this.template];
+
+        if (this.page.id === 'home') this.addLinkListener();
     }
 
     initPreloader() {
@@ -62,17 +68,13 @@ class App {
         await this.transition.show();
 
         this.preloader.destroy();
+
         this.transition.hide();
 
         this.banner = new Banner();
         this.card = new Card();
         this.page.initIntroAnimation();
         this.page.showIntroAnimation();
-    }
-
-    initContents() {
-        this.content = document.querySelector('.container');
-        this.template = this.content.getAttribute('data-template');
     }
 
     onPopSate() {
@@ -129,8 +131,8 @@ class App {
     }
 
     addLinkListener() {
-        const darkMode = document.querySelector('.footer_top_dark');
         let isOn = false;
+        const darkMode = document.querySelector('.footer_top_dark');
 
         this.page.initDarkMode();
         darkMode.onclick = (e) => {
