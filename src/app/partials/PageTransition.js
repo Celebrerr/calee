@@ -81,7 +81,7 @@ export default class PageTransition {
                         ease: eases.expoInOut,
                         y: '101%',
 
-                        onComplete: resolve,
+                        onStart: resolve,
                     },
                     0.5
                 );

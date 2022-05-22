@@ -1,5 +1,5 @@
 const filesToCache = ['/', 'main.css', 'main.js', 'index.html', '404.html'];
-const staticCacheName = 'cache-v1';
+const staticCacheName = 'calee-v1';
 
 self.addEventListener('install', (event) => {
     event.waitUntil(

@@ -13,34 +13,29 @@ export default class Banner {
         this.bannerClose = this.element.querySelector('.banner_close');
 
         this.initBanner();
-        this.animateBanner();
-
         this.addEventListeners();
     }
 
     initBanner() {
         GSAP.set(this.element, { autoAlpha: 0, y: '101%' });
 
-        setTimeout(() => {
-            this.tl.play();
-        }, 2500);
+        this.tl = GSAP.timeline({ paused: true }).to(
+            this.element,
+            {
+                duration: 0.5,
+                autoAlpha: 1,
+                y: 0,
+                ease: eases.power4Out,
+            },
+            4
+        );
     }
 
-    animateBanner() {
-        this.tl = GSAP.timeline({ paused: true }).to(this.element, {
-            duration: 0.5,
-            autoAlpha: 1,
-            y: 0,
-            ease: eases.power4Out,
-        });
+    showBanner() {
+        this.tl.play();
     }
 
     addEventListeners() {
-        this.bannerButton.onclick = () => {
-            alert('Yooooooos, web app installed succesfully :)');
-            this.destroy();
-        };
-
         this.bannerClose.onclick = (e) => {
             e.preventDefault();
             this.destroy();

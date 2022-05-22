@@ -1,8 +1,7 @@
 import 'lazysizes';
 
 import { canvasNoise, calcMobileViewport } from './utils/utility';
-import PageTransition from './animations/PageTransition';
-import Banner from './partials/Banner';
+import PageTransition from './partials/PageTransition';
 import Card from './partials/Card';
 
 import Preloader from './partials/Preloader';
@@ -12,6 +11,8 @@ import Observer from './animations/Observer';
 
 import Home from './pages/Home';
 import Error from './pages/Error';
+
+import PWA from '../pwa';
 
 class App {
     constructor() {
@@ -28,9 +29,10 @@ class App {
 
     initPartials() {
         canvasNoise();
-        // calcMobileViewport('.utiliy-mobileViewport');
+        calcMobileViewport('.utiliy-mobileViewport');
 
         this.transition = new PageTransition();
+        this.pwa = new PWA();
     }
 
     initAnimations() {
@@ -69,9 +71,9 @@ class App {
 
         this.preloader.destroy();
 
-        this.transition.hide();
+        await this.transition.hide();
 
-        this.banner = new Banner();
+        this.pwa.showInstallPromotion();
         this.card = new Card();
         this.page.initIntroAnimation();
         this.page.showIntroAnimation();

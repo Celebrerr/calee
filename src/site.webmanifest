@@ -9,6 +9,12 @@
             "purpose": "any maskable"
         },
         {
+            "src": "../static/android-chrome-384x384.png",
+            "sizes": "384x384",
+            "type": "image/png",
+            "purpose": "any maskable"
+        },
+        {
             "src": "../static/android-chrome-512x512.png",
             "sizes": "512x512",
             "type": "image/png",
@@ -19,6 +25,11 @@
     "background_color": "#ffffff",
     "display": "standalone",
 
+    "scrope": "/",
     "start_url": "/index.html",
-    "id": "/index.html"
+    "id": "/index.html",
+    "related_applications": [{
+        "platform": "webapp",
+        "url": "/site.webmanifest"
+    }]
 }

@@ -15,6 +15,9 @@ export default class Page {
         this.prevScrollPos = window.pageYOffset;
 
         this.create();
+
+        if (this.id === 'home') this.init();
+
         this.addEventListeners();
     }
 
@@ -36,38 +39,45 @@ export default class Page {
         });
     }
 
+    init() {
+        GSAP.set([this.selectorChildren.header, this.selectorChildren.description, this.selectorChildren.label], {
+            y: '-101%',
+        });
+        GSAP.set(this.selectorChildren.image, {
+            scale: '0.7',
+            y: '-101%',
+        });
+    }
+
     initIntroAnimation() {
         this.intro = GSAP.timeline({ paused: true })
-            .from(
+            .to(
                 this.selectorChildren.header,
                 {
-                    duration: 1,
-                    autoAlpha: 0,
-                    y: '-101%',
-                    stagger: 0.05,
+                    duration: 2,
+                    y: 0,
                     ease: eases.expoInOut,
                 },
-                0.5
+                0.4
             )
-            .from(
+            .to(
                 this.selectorChildren.image,
                 {
                     duration: 2,
-                    y: '-100%',
-                    scale: 0.7,
+                    y: 0,
+                    scale: 1,
                     ease: eases.expoOut,
                 },
-                0
+                0.5
             )
-            .from(
+            .to(
                 [this.selectorChildren.description, this.selectorChildren.label],
                 {
-                    duration: 1.3,
-                    y: '-101%',
-                    rotate: 0.2,
+                    duration: 2,
+                    y: 0,
                     ease: eases.expoInOut,
                 },
-                0.5
+                0.6
             );
     }
     showIntroAnimation() {
