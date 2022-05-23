@@ -36,12 +36,7 @@ class App {
     }
 
     initAnimations() {
-        const isMobile = window.matchMedia('(max-width: 769px)');
-        const checkIsMobile = isMobile.matches;
-
-        if (!checkIsMobile) {
-            this.smoothScroll = new SmoothScroll();
-        }
+        this.smoothScroll = new SmoothScroll();
         this.observer = new Observer();
     }
 
@@ -142,14 +137,6 @@ class App {
             !isOn ? this.page.playDarkMode() : this.page.stopDarkMode();
 
             isOn = !isOn;
-        };
-
-        const goTop = document.querySelector('.footer_bottom_backtotop');
-        goTop.onclick = (e) => {
-            e.preventDefault();
-            document.querySelector('.home').scrollIntoView({
-                behavior: 'smooth',
-            });
         };
     }
 }
