@@ -153,7 +153,17 @@ export default class Page {
         const header = document.querySelector('.header_wrapper');
         let currentScrollPos = window.pageYOffset;
 
-        this.prevScrollPos > currentScrollPos ? (header.style.opacity = '1') : (header.style.opacity = '0');
+        if (this.prevScrollPos > currentScrollPos) {
+            header.style.opacity = '1';
+            header.style.pointerEvents = 'auto';
+            header.style.backgroundColor = '#E4E0DF';
+        } else {
+            header.style.opacity = '0';
+            header.style.pointerEvents = 'none';
+        }
+
+        if (currentScrollPos === 0) header.style.backgroundColor = 'transparent';
+
         this.prevScrollPos = currentScrollPos;
     }
 
