@@ -50,7 +50,11 @@ export default class SmoothScroll {
         e.preventDefault();
 
         if (!this.isMobile) {
-            window.scrollBy(0, -this.containerHeight);
+            window.scrollBy({
+                top: -this.containerHeight,
+                left: 0,
+                behavior: 'smooth',
+            });
         } else {
             document.querySelector('.home').scrollIntoView({ behavior: 'smooth' });
         }
@@ -62,9 +66,24 @@ export default class SmoothScroll {
         const id = e.srcElement.id;
         const selector = this.el.querySelector(`.${id}`);
 
-        if (id === 'gallery') window.scrollBy({ top: this.calcSectionRect(selector), left: 0, behavior: 'smooth' });
-        if (id === 'about') window.scrollBy({ top: this.calcSectionRect(selector), left: 0, behavior: 'smooth' });
-        if (id === 'contact') window.scrollBy({ top: this.calcSectionRect(selector), left: 0, behavior: 'smooth' });
+        if (id === 'gallery')
+            window.scrollBy({
+                top: this.calcSectionRect(selector),
+                left: 0,
+                behavior: 'smooth',
+            });
+        if (id === 'about')
+            window.scrollBy({
+                top: this.calcSectionRect(selector),
+                left: 0,
+                behavior: 'smooth',
+            });
+        if (id === 'contact')
+            window.scrollBy({
+                top: this.calcSectionRect(selector),
+                left: 0,
+                behavior: 'smooth',
+            });
     }
 
     addEventListeners() {
