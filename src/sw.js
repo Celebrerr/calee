@@ -10,6 +10,8 @@ self.addEventListener('install', (event) => {
 });
 
 self.addEventListener('fetch', (event) => {
+    if (!event.request.url.startsWith('http')) return;
+
     event.respondWith(
         caches
             .match(event.request)
@@ -21,6 +23,7 @@ self.addEventListener('fetch', (event) => {
             })
             .then(async (response) => {
                 const cache = await caches.open(staticCacheName);
+
                 cache.put(event.request.url, response.clone());
 
                 return response;
