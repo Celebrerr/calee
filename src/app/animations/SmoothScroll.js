@@ -28,7 +28,7 @@ export default class SmoothScroll {
 
     calcSectionRect(section) {
         this.section = section.getBoundingClientRect();
-        return this.section.top;
+        return this.section.top - 100;
     }
 
     scroll() {

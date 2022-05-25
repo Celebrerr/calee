@@ -103,11 +103,13 @@ export default class Page {
             footer: '.footer_line',
         };
 
+        const button = document.querySelector('.footer_top_dark > a');
+
         this.tlDark = GSAP.timeline({ paused: true })
             .to(
                 selectorMain.body,
                 {
-                    duration: 1,
+                    duration: 0.5,
                     background: '#313131',
                     color: '#efefef',
                     ease: eases.circOut,
@@ -117,7 +119,7 @@ export default class Page {
             .to(
                 [selectorMedia.figure, selectorMedia.info],
                 {
-                    duration: 1,
+                    duration: 0.5,
                     backgroundColor: '#212121',
                     color: '#efefef',
                     ease: eases.circOut,
@@ -127,47 +129,66 @@ export default class Page {
             .to(
                 [selectorLines.header, selectorLines.footer],
                 {
-                    duration: 1,
+                    duration: 0.5,
                     borderBottomColor: '#efefef',
                     ease: eases.circOut,
                 },
                 0
             );
+
+        this.tlButton = GSAP.timeline({ paused: true })
+            .to(
+                button,
+                {
+                    duration: 1,
+                    y: '200%',
+                    ease: eases.expoInOut,
+                },
+                0
+            )
+            .to(
+                button,
+                {
+                    duration: 1,
+                    y: 0,
+                    ease: eases.expoInOut,
+                },
+                0.6
+            )
+            .to(
+                button,
+                {
+                    text: {
+                        value: '☼ Light Mode',
+                        delimiter: ' ',
+                    },
+                    ease: eases.circOut,
+                },
+                0.6
+            );
     }
+
     playDarkMode() {
         this.tlDark.play();
-        GSAP.to('.footer_top_dark > a', {
-            delay: 0.5,
-            text: '☼ Light Mode',
-        });
+        this.tlButton.play();
     }
     stopDarkMode() {
         this.tlDark.reverse();
-        GSAP.to('.footer_top_dark > a', {
-            delay: 0.5,
-            text: '☀ Dark Mode',
-        });
+        this.tlButton.reverse();
     }
 
     onScroll() {
         const header = document.querySelector('.header_wrapper');
         let currentScrollPos = window.pageYOffset;
 
-        if (this.prevScrollPos > currentScrollPos) {
-            header.style.opacity = '1';
-            header.style.pointerEvents = 'auto';
-            header.style.backgroundColor = '#E4E0DF';
-        } else {
-            header.style.opacity = '0';
-            header.style.pointerEvents = 'none';
-        }
-
-        if (currentScrollPos === 0) header.style.backgroundColor = 'transparent';
+        currentScrollPos > 500
+            ? (header.style.backgroundColor = '#E4E0DF')
+            : (header.style.backgroundColor = 'transparent');
 
         this.prevScrollPos = currentScrollPos;
     }
 
     addEventListeners() {
-        window.addEventListener('scroll', this.onScroll.bind(this));
+        // window.addEventListener('scroll', this.onScroll.bind(this));
     }
 }

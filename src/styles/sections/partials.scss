@@ -1,11 +1,10 @@
 .header {
     @extend %fixed;
     z-index: 800;
-   
+
     .header_wrapper {
         width: 100%;
         padding: 3rem;
-        transition: opacity 0.25s ease-in-out;
         
         .header_container {
             display: flex;
@@ -88,9 +87,13 @@
                 grid-area: c4;
                 align-self: flex-end;
                 text-align: right;
+                overflow: hidden;
 
-                span {
-                    @extend %parag
+                a {
+                    display: inline-block;
+                    span {
+                        @extend %parag
+                    }
                 }
             }
         }
