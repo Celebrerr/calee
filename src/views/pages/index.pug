@@ -25,6 +25,7 @@ block container
                     .gallery_container
                         .gallery_heading(class="grid")
                             .gallery_heading_title.ofh
+                                span|suspensions &#x2014; wall light
                                 h2|Ceiling
                             
                             .gallery_heading_description.ofh
@@ -42,7 +43,9 @@ block container
                                     +product-info
                             
                                 .product_title
-                                    h3|Koln
+                                    h3
+                                        span|01.  
+                                        |Koln
                                     span|+
                             
                             .gallery_product
@@ -53,7 +56,9 @@ block container
                                     +product-info
                             
                                 .product_title 
-                                    h3|Daro
+                                    h3
+                                        span|02. 
+                                        |Daro
                                     span|+
 
                             .gallery_product
@@ -64,7 +69,9 @@ block container
                                     +product-info
                             
                                 .product_title 
-                                    h3|Flut
+                                    h3
+                                        span|03. 
+                                        |Flut
                                     span|+
                             
                         .gallery_products(class="grid" data-scroll-animation)
@@ -76,7 +83,9 @@ block container
                                     +product-info
                             
                                 .product_title 
-                                    h3|Noln
+                                    h3
+                                        span|04. 
+                                        |Noln
                                     span|+
 
                             .gallery_product
@@ -87,7 +96,9 @@ block container
                                     +product-info
                             
                                 .product_title 
-                                    h3|Noln
+                                    h3
+                                        span|05. 
+                                        |Noln
                                     span|+
 
                             .gallery_product
@@ -98,12 +109,15 @@ block container
                                     +product-info
                             
                                 .product_title 
-                                    h3|Miaa
+                                    h3
+                                        span|06. 
+                                        |Miaa
                                     span|+
             
 
                         .gallery_heading(class="grid")
                             .gallery_heading_title
+                                span|floor &#x2014; table
                                 h2|Lamps
                             
                             .gallery_heading_description
@@ -119,7 +133,9 @@ block container
                                     +product-info
                             
                                 .product_title 
-                                    h3|Blua
+                                    h3
+                                        span|01. 
+                                        |Blua
                                     span|+      
 
                             .gallery_product
@@ -130,7 +146,9 @@ block container
                                     +product-info-lamp
                             
                                 .product_title 
-                                    h3|Crit
+                                    h3
+                                        span|02. 
+                                        |Crit
                                     span|+
 
                             .gallery_product
@@ -141,13 +159,17 @@ block container
                                     +product-info
                             
                                 .product_title 
-                                    h3|Muno
+                                    h3
+                                        span|03. 
+                                        |Muno
                                     span|+
 
             .about 
                 .about_wrapper(data-scroll-animation)
                     .about_heading
                         h1|About
+
+                        span|CVL &#x2014; Pool
                     
                     .about_media.is-desktop 
                         figure.about_figure.ofh 
@@ -158,13 +180,35 @@ block container
                             img.about_image.lazyload(data-src=require("../../images/about2-mob.jpg").default, alt="c1")
 
                     .about_content(class="grid")
-                        .about_content_description 
-                            p|The Parisian design studio, founded in 2011 by Léa Padovani and Sébastien Kieffer, intervenes in as many domains as furniture, environment, and interior architecture. 
-                            p|The duo POOL studies its creations in a global context, either when signing their own collections or collaborating with other workshops and manufacturers. 
-                            p|The geographical composition where forms and colors end up as radical volumes, is the signature of Pool transdisciplinary tandem. Passionate by the know-how of craftsmen and art manufacturers and by human connections, they often act as artistic directors, a role they have had since 2017 for CVL.
+                        .about_content_col
+                            .about_content_col_title 
+                                h4|CVL
+                            
+                            .about_content_col_link 
+                                a(href="http://poolstudio.fr/" target='_blank' class="hover hover--case")|Know more about CVL
+                        
+                        .about_content_col
+                            .about_content_col_description
+                                p|The Parisian design studio, founded in 2011 by Léa Padovani and Sébastien Kieffer, intervenes in as many domains as furniture, environment, and interior architecture.
 
-                        .about_content_link 
-                            a(href="http://poolstudio.fr/" target='_blank' class="hover hover--link")|Pool Design Studio
+                                p|The duo POOL studies its creations in a global context, either when signing their own collections or collaborating with other workshops and manufacturers.
+
+
+
+                        .about_content_col
+                            .about_content_col_title 
+                                h4|Pool
+                            
+                            .about_content_col_link 
+                                a(href="https://www.cvl-luminaires.fr/histoire/" target='_blank' class="hover hover--case")|Know more about Pool
+
+                        .about_content_col
+                            .about_content_col_description
+                                p|CVL Luminaires, located in the Loire Valley, brings over fifty years of experience in the design and production of high quality lightings.
+
+                                p|Each light fitting is entirely handmade and highlights CVL’s know-how, driven by our passion for our favourite material: brass.
+
+                                //- p|Since several years, the internal design office, managed by Émilie Cathelineau, designer at CVL, collaborates with independent desi- gners like Hervé Langlais, POOL and Kristian Gavoille. Recently, they were joined by Pauline Deltour to create the new collection.
 
             .contact
                 .contact_wrapper(class="grid" data-scroll-animation)

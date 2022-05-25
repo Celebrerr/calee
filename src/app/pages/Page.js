@@ -140,7 +140,7 @@ export default class Page {
             .to(
                 button,
                 {
-                    duration: 1,
+                    duration: 0.6,
                     y: '200%',
                     ease: eases.expoInOut,
                 },
@@ -149,7 +149,7 @@ export default class Page {
             .to(
                 button,
                 {
-                    duration: 1,
+                    duration: 0.6,
                     y: 0,
                     ease: eases.expoInOut,
                 },

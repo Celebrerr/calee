@@ -12,6 +12,13 @@
         margin-bottom: 6rem;
 
     }
+    // span {
+    //     font-size: 1.2rem;
+    //     @media (max-width: $breakpoint-tablet) {
+    //         margin-bottom: 6rem;
+    
+    //     }
+    // }
 }
 .gallery_heading_description {
     grid-area: c3;
@@ -53,6 +60,11 @@
         width: 100%;
 
         overflow: hidden;
+        h3 {
+            span {
+                font-size: 1.2rem;
+            }
+        }
         span {
             font-size: 3rem;
             cursor: pointer;
