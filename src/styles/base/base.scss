@@ -261,14 +261,14 @@ button {
 //? Utility
 .is-mobile {
     display: none;
-    @media (max-width: 768px) {
+    @media (max-width :$breakpoint-mobile) {
         display: block;
     }
 }
 
 .is-desktop {
     display: block;
-    @media (max-width: 768px) {
+    @media (max-width :$breakpoint-mobile) {
         display: none;
     }
 }

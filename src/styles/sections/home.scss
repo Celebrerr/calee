@@ -19,6 +19,9 @@
         width: 192rem;
         height: 108rem;
         background-color: unset;
+        @media (max-width: 820px) {
+               height: 50vh;
+        }
 
 
         .home_image {
