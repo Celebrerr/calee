@@ -193,8 +193,11 @@
         }
 
         .banner_title {
-            font-weight: bold;
-            margin-bottom: 2rem;
+            margin-bottom: 2rem; 
+            h2 {
+                @extend %parag;
+                font-weight: bold;
+            }
         }
 
         .banner_description {
@@ -211,8 +214,7 @@
             a {
                 @extend %label;
                 font-weight: bold;
-                text-decoration: underline;
-                
+                text-decoration: underline; 
             }
         }
 
