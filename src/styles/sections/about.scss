@@ -2,10 +2,6 @@
     @extend %mb-sections;
 }
 
-.about_wrapper {
-
-}
-
 .about_heading {
     margin-bottom: 6rem;
     display: flex;
@@ -64,15 +60,18 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+
+        @media (max-width: $breakpoint-tablet) {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-end;
+            width: 100%;
+        }
     }
 
     @media (max-width: $breakpoint-tablet) {
         margin-bottom: 6rem;
     }
-}
-
-.about_content_col_link {
-    font-weight: bold;
 }
 
 .about_content_col_description {

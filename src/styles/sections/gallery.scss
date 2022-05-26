@@ -11,14 +11,13 @@
     @media (max-width: $breakpoint-tablet) {
         margin-bottom: 6rem;
 
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        align-items: flex-end;
+        width: 100%;
+
     }
-    // span {
-    //     font-size: 1.2rem;
-    //     @media (max-width: $breakpoint-tablet) {
-    //         margin-bottom: 6rem;
-    
-    //     }
-    // }
 }
 .gallery_heading_description {
     grid-area: c3;
@@ -63,6 +62,9 @@
         h3 {
             span {
                 font-size: 1.2rem;
+                @media (max-width: $breakpoint-tablet) {
+                    font-size: 2rem;
+                }
             }
         }
         span {
@@ -130,10 +132,6 @@
                 }
             }
         }
-
-        // &:last-child {
-        //     margin-bottom: 0;
-        // }
     }
     
 }
@@ -192,7 +190,6 @@
                 margin-bottom: 0;
             }
         }
-
     }
 }
 
@@ -252,9 +249,7 @@
             &:last-child {
                 margin-bottom: 0;
             }
-        }
-
-       
+        } 
     }
 }
 
@@ -333,5 +328,4 @@
             }
         }
     }
-
 }

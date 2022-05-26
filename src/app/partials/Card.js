@@ -25,7 +25,7 @@ export default class Card extends Gallery {
             const text = media.querySelector('.product_title');
 
             const title = text.querySelector('h3');
-            const button = text.querySelector('span');
+            const button = text.querySelector('.open-info');
 
             const tl = GSAP.timeline({ paused: true })
                 .to(

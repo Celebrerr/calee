@@ -18,6 +18,7 @@
             }
     
             .header_nav {
+                
                 @media (max-width: $breakpoint-tablet) {
                     display: flex;
                     flex-direction: column;
@@ -25,8 +26,10 @@
                 }
                 a {
                     margin-left: 3rem;
+                    mix-blend-mode:exclusion;
                     @media (max-width: $breakpoint-tablet) {
                         margin-left: 0;
+                        margin-bottom: 0.5rem;
                     }
                 }
             }
