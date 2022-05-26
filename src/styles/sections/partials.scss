@@ -1,6 +1,8 @@
 .header {
     @extend %fixed;
     z-index: 800;
+    // color: #E4E0DF; 
+    // mix-blend-mode:exclusion;
 
     .header_wrapper {
         width: 100%;
@@ -17,21 +19,23 @@
                 }
             }
     
-            .header_nav {
-                
+            .header_nav {     
+               
+
                 @media (max-width: $breakpoint-tablet) {
                     display: flex;
                     flex-direction: column;
                     align-items: flex-end;  
                 }
                 a {
-                    margin-left: 3rem;
-                    mix-blend-mode:exclusion;
+                    margin-left: 1rem;
                     @media (max-width: $breakpoint-tablet) {
                         margin-left: 0;
                         margin-bottom: 0.5rem;
                     }
+
                 }
+               
             }
         }
 
@@ -68,14 +72,11 @@
 
 .footer {
     position: relative;
+    margin-bottom: 3rem;
+
     .footer_wrapper {
         display: block;
         width: 100%;
-        margin-bottom: 3rem;
-        // a {
-        //     font-weight: bold;
-        // }
-
         .footer_top {
             .footer_top_logo {
                 grid-area: c1;

@@ -168,13 +168,16 @@ button {
     border: none;
     
     
-    padding: 1rem 4rem;
+    padding: 1.5rem 4rem;
     background-color: $color-secondary;
     color: $color-primary;
     border-radius: 0.2rem;
     cursor: pointer;
     @extend %label;
     font-weight: bold;
+    @media (max-width :$breakpoint-mobile) {
+        padding: 2rem 6rem;
+    }
 
 }
 

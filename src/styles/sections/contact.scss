@@ -23,7 +23,10 @@
         height: inherit;
 
         .contact_description {
-            margin-bottom: 6rem;  
+            margin-bottom: 6rem;
+            p:nth-child(1) {
+                margin-bottom: 3rem;
+            }  
         }
 
         .contact_social {
