@@ -6,21 +6,19 @@ import { eases } from '../utils/easing';
 
 export default class Banner {
     constructor() {
-        this.element = document.querySelector('.banner');
-        this.banner = this.element;
-        this.bannerInner = this.element.children[0];
-        this.bannerButton = this.element.querySelector('.banner_button');
-        this.bannerClose = this.element.querySelector('.banner_close');
+        this.banner = document.querySelector('.banner');
+        this.bannerButton = this.banner.querySelector('.banner_button');
+        this.bannerClose = this.banner.querySelector('.banner_close');
 
         this.initBanner();
         this.addEventListeners();
     }
 
     initBanner() {
-        GSAP.set(this.element, { autoAlpha: 0, y: '101%' });
+        GSAP.set(this.banner, { autoAlpha: 0, y: '101%' });
 
         this.tl = GSAP.timeline({ paused: true }).to(
-            this.element,
+            this.banner,
             {
                 duration: 0.5,
                 autoAlpha: 1,
@@ -45,10 +43,10 @@ export default class Banner {
     destroy() {
         this.tl.reverse();
 
-        GSAP.to(this.element, {
+        GSAP.to(this.banner, {
             duration: 0.5,
             onComplete: () => {
-                this.element.remove();
+                this.banner.remove();
             },
         });
     }

@@ -8,13 +8,14 @@ export default class SmoothScroll {
         this.about = document.getElementById('about');
         this.contact = document.getElementById('contact');
         this.scrollTop = document.querySelector('.footer_bottom_backtotop');
+        this.scrollBottom = document.querySelector('.header_menu span');
 
         this.current = 0;
         this.target = 0;
         this.ease = 0.04;
 
         this.isMobile = window.matchMedia('(max-width: 769px)').matches;
-        !this.isMobile ? this.init() : null;
+        if (!this.isMobile) this.init();
 
         this.addEventListeners();
     }
@@ -56,13 +57,16 @@ export default class SmoothScroll {
                 behavior: 'smooth',
             });
         } else {
-            document.querySelector('.home').scrollIntoView({ behavior: 'smooth' });
+            // document.querySelector('.home').scrollIntoView({ behavior: 'smooth' });
+            scrollTo({
+                top: 0,
+                left: 0,
+                behavior: 'smooth',
+            });
         }
     }
 
     onScrollBy(e) {
-        e.preventDefault();
-
         const id = e.srcElement.id;
         const selector = this.el.querySelector(`.${id}`);
 
@@ -87,11 +91,11 @@ export default class SmoothScroll {
     }
 
     addEventListeners() {
-        window.addEventListener('resize', this.onResize.bind(this));
-
         this.scrollTop.addEventListener('click', this.onScrollTop.bind(this));
         this.gallery.addEventListener('click', this.onScrollBy.bind(this));
         this.about.addEventListener('click', this.onScrollBy.bind(this));
         this.contact.addEventListener('click', this.onScrollBy.bind(this));
+
+        if (!this.isMobile) window.addEventListener('resize', this.onResize.bind(this));
     }
 }

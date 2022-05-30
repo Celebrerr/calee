@@ -140,7 +140,7 @@ export default class Page {
             .to(
                 button,
                 {
-                    duration: 0.6,
+                    duration: 1,
                     y: '200%',
                     ease: eases.expoInOut,
                 },
@@ -149,7 +149,7 @@ export default class Page {
             .to(
                 button,
                 {
-                    duration: 0.6,
+                    duration: 1,
                     y: 0,
                     ease: eases.expoInOut,
                 },
@@ -159,8 +159,7 @@ export default class Page {
                 button,
                 {
                     text: {
-                        value: '☼ Light Mode',
-                        delimiter: ' ',
+                        value: '☀ Light Mode',
                     },
                     ease: eases.circOut,
                 },
@@ -178,17 +177,15 @@ export default class Page {
     }
 
     onScroll() {
-        const header = document.querySelector('.header_wrapper');
+        const header = document.querySelector('.home_label');
         let currentScrollPos = window.pageYOffset;
 
-        currentScrollPos > 500
-            ? (header.style.backgroundColor = '#E4E0DF')
-            : (header.style.backgroundColor = 'transparent');
+        currentScrollPos > 100 ? (header.style.opacity = 0) : (header.style.opacity = 1);
 
         this.prevScrollPos = currentScrollPos;
     }
 
     addEventListeners() {
-        // window.addEventListener('scroll', this.onScroll.bind(this));
+        window.addEventListener('scroll', this.onScroll.bind(this));
     }
 }

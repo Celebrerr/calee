@@ -4,12 +4,12 @@
     box-sizing: border-box;
 }
 
-// html,
-// body {
-//   height: 100%;
-//   width: 100%;
-//   overflow: auto;
-// }
+html,
+body {
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+}
 
 // html,
 // body {
@@ -168,15 +168,16 @@ button {
     border: none;
     
     
-    padding: 1.5rem 4rem;
+    padding: 1.5rem 6rem;
     background-color: $color-secondary;
     color: $color-primary;
     border-radius: 0.2rem;
     cursor: pointer;
-    @extend %label;
+    @extend %parag;
     font-weight: bold;
     @media (max-width :$breakpoint-mobile) {
-        padding: 2rem 6rem;
+        padding: 3rem 6rem;
+        width: 100%;
     }
 
 }
@@ -272,7 +273,7 @@ button {
 .is-desktop {
     display: block;
     @media (max-width :$breakpoint-mobile) {
-        display: none;
+        display: none !important;
     }
 }
 

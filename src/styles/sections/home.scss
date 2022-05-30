@@ -54,6 +54,8 @@
         grid-area: c4;
         text-align: right;
         overflow: hidden;
+
+        transition: opacity 0.5s ease-in-out;
         span {
             @extend %parag;
             display: inline-flex;
