@@ -113,10 +113,10 @@
         }
 
         .banner_title {
-            margin-bottom: 3rem; 
+            margin-bottom: 2rem; 
             h2 {
-                font-size: 3.5rem;
-                line-height: 5rem;
+                font-size: 3rem;
+                line-height: 4rem;
                 font-weight: bold;
                 @media (max-width: $breakpoint-mobile) {
                     font-size: 4rem;
@@ -125,7 +125,7 @@
         }
 
         .banner_description {
-            margin-bottom: 4rem;
+            margin-bottom: 3rem;
             p {
                 @extend %parag;
                 margin-bottom: 2rem;
@@ -137,20 +137,6 @@
                 text-decoration: underline; 
             }
         }
-
-        .banner_actions {
-            display: flex;
-            // justify-content: space-between;
-            align-items: flex-end;
-
-            span {
-                text-decoration: underline;
-                font-weight: bold;
-                margin-left: 3rem;
-            }
-        }
-
-        
     }
 }
 
